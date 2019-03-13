@@ -16,36 +16,15 @@
     border-color: white;
 }
 
-.submit-btn{
+.register-btn{
     margin-left: 10px;
     color: white;
     background-color: black;
     border-color: white;
 }
 
-.submit-btn:hover{
+.register-btn:hover{
     color: white;
     background-color: gold;
     border-color: white;
-}
-
-.top{
-    background: url('../img/background.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    height: 95vh;
-}
-
-.title{
-    color: white;
-    text-align: center;
-    padding-top: 50vh;
-    font-size: 5em;
-}
-
-.title-bottom{
-    color: white;
-    text-align: center;
-    font-size: 3em;
 }

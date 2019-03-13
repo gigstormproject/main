@@ -1,0 +1,19 @@
+.login-content {
+    background: url('../img/login-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.login-panel{
+    background:white;
+    text-align:center;
+    margin-top: 20vh;
+    border: white 3px;
+    border-radius: 5px;
+}
+
+.login-panel h1{
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
