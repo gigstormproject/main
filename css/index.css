@@ -67,7 +67,7 @@
 
     background-repeat: no-repeat;
     background-size: cover;
-    height: 55vh;
+    height: 70vh;
     padding: 3%;
     padding-left: 10%;
     padding-right: 10%;
@@ -77,6 +77,14 @@
 .s2 h1{
   margin-top:10vh;
   padding-bottom: 2vh;
+}
+
+.s3{
+  background: url('../img/garbage.jpg');
+  text-align: center;
+  height: 100vh;
+  background-attachment: fixed;
+  color: whitesmoke;
 }
 .title{
     color: white;
