@@ -47,11 +47,11 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    height: 95vh;
+    height: 100vh;
 }
 
 .s2{
-    background: darkgrey;
+    background: url("../img/black.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 
