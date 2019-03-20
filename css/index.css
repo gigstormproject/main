@@ -1,5 +1,10 @@
-.top{
- 
+@font-face{
+  font-family: logo;
+  src: url('../fonts/LOSTWAGE.TTF');
+}
+
+.logo{
+  font-family: logo;
 }
 
 .s1{
@@ -11,7 +16,7 @@
 }
 
 .s2{
-    background: url('../img/login-background.jpg');
+    background: darkgrey;
     background-repeat: no-repeat;
     background-size: cover;
 
