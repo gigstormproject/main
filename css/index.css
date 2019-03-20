@@ -34,6 +34,12 @@
   }
 }
 
+.navigation-leiste{
+  width:100%;
+  position:fixed;
+  background-color: black;
+}
+
 .logo{
   color: #FFDD1B;
   font-family: 'Monoton', cursive;
@@ -57,7 +63,13 @@
 
     background-repeat: no-repeat;
     background-size: cover;
-    height: 40vh;
+    height: 80vh;
+}
+
+.s2 h2{
+  padding: 5%;
+  margin-top:10vh;
+  color: white;
 }
 .title{
     color: white;
