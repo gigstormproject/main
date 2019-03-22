@@ -70,7 +70,7 @@
 
 .logo{
   color: #FFDD1B;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Monoton', cursive;
   font-size: 50px;
   padding:0;
   margin:0;
@@ -83,10 +83,17 @@
     color: #FF1177;
     font-family: 'Monoton', cursive;
  
-    font-size: 35px;
+    font-size: 30px;
     padding:0;
     margin:0;
     margin-right: 2vw;
+
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -moz-transform: scale(1,1);
+    -webkit-transform: scale(1,1);
+    transform: scale(1,1);
   
 }
 .logoSmall:hover{
@@ -94,6 +101,9 @@
   -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
   -moz-animation: neon1 1.5s ease-in-out infinite alternate;
   animation: neon1 1.5s ease-in-out infinite alternate;
+  -moz-transform: scale(1.2,1.2);
+  -webkit-transform: scale(1.2,1.2);
+  transform: scale(1.2,1.2);      
 
 }
 
@@ -106,8 +116,22 @@
     text-align: center;
     color: white;
     overflow:hidden;
-}
 
+    -moz-transform: scale(1,1);
+    -webkit-transform: scale(1,1);
+    transform: scale(1,1);
+
+    -moz-transition: all 5s;
+    -webkit-transition: all 5s;
+    transition:  5s;
+
+   
+}
+.s1:hover{
+  -moz-transform: scale(2,2);
+  -webkit-transform: scale(2,2);
+  transform: scale(2,2);   
+}
 .s2{
   background:
   linear-gradient(rgba(30, 29, 29,0.9), rgba(43, 52, 61, 0.4)),
@@ -359,11 +383,11 @@ button{
     border-bottom:none;
     border-left:solid 15vh transparent;
     border-right:solid 15vh transparent;
-    border-top:solid 200vh rgba(255, 255, 255, .5);
+    border-top:solid 200vh rgba(255, 255, 255, 0.178);
     bottom:0;
     height:0;
     left:0;
-    position:absolute;
+    position:absolute;  
     transform-origin:bottom;
     width:0;
   }
