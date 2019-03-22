@@ -101,6 +101,7 @@
     height: 100vh;
     text-align: center;
     color: white;
+    overflow:hidden;
 }
 
 .s2{
@@ -152,8 +153,20 @@ body{
 	display:flex;
 	flex-direction:row;
 	justify-content:center;
-	align-items:center;
+  align-items:center;
+  width:100vw;
 }
+ s
+.navbarbg{
+  background:url("../img/blackbg.png");
+  background-repeat:repeat;
+  
+}
+.navbar-expand-lg .navbar-dark .bg-dark .fixed-top{
+  background:url("../img/blackbg.png");
+  background-repeat:repeat;
+}
+
 .form-control{
 	border:none;
 	border-bottom:3px solid dodgerblue;
@@ -309,7 +322,7 @@ button{
     position: absolute;
     width:100%;
     height: 2px;
-    background: #50dfdb;
+    background: #f8fafa;
     animation: animate 4s linear infinite;
   }
   
@@ -339,7 +352,44 @@ button{
     
     
   } 
-    
-  
 
+  /* spotlight */
+
+  .light {
+    animation:top-right 5s ease-in-out alternate infinite;
+    border-bottom:none;
+    border-left:solid 15vh transparent;
+    border-right:solid 15vh transparent;
+    border-top:solid 200vh rgba(255, 255, 255, .5);
+    bottom:0;
+    height:0;
+    left:0;
+    position:absolute;
+    transform-origin:bottom;
+    width:0;
+  }
+  
+  .light + .light {
+    animation:top-left 4s ease-in-out alternate infinite;
+    left:auto;
+    right:0;
+  }
+  
+  @keyframes top-right {
+    0% {
+      transform:rotate(0deg);
+    }
+    100% {
+      transform:rotate(45deg);
+    }
+  }
+  
+  @keyframes top-left {
+    0% {
+      transform:rotate(0deg);
+    }
+    100% {
+      transform:rotate(-45deg);
+    }
+  }
 
