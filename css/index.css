@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Monoton|Permanent+Marker|Righteous');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
 
 /* logo font & neon animationen */
 @font-face{
@@ -60,7 +61,7 @@
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
   }
 }
-/* our own styles have a superclass */
+
 .navigation-leiste{
   width:100%;
   position:fixed;
@@ -69,28 +70,31 @@
 
 .logo{
   color: #FFDD1B;
-  font-family: 'Monoton', cursive;
-  -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
-  -moz-animation: neon3 1.5s ease-in-out infinite alternate;
-  animation: neon3 1.5s ease-in-out infinite alternate;
+  font-family: 'Pacifico', cursive;
   font-size: 50px;
   padding:0;
   margin:0;
   margin-right: 5vw;
-  
+  -webkit-animation: flicker 1s linear infinite;
+  animation: flicker 8s linear infinite;
 }
 
-  .logoSmall{
+.logoSmall{
     color: #FF1177;
     font-family: 'Monoton', cursive;
-    -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-    -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-    animation: neon1 1.5s ease-in-out infinite alternate;
+ 
     font-size: 35px;
     padding:0;
     margin:0;
     margin-right: 2vw;
   
+}
+.logoSmall:hover{
+  color: #FF1177;
+  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+
 }
 
 .s1{
@@ -124,7 +128,8 @@
 }
 
 .s3{
-  background: url('../img/garbage.jpg');
+  background: url('../img/garbage6.jpg');
+  background-size: cover;
   text-align: center;
   height: 100vh;
   background-attachment: fixed;
@@ -156,15 +161,9 @@ body{
   align-items:center;
   width:100vw;
 }
- s
+
 .navbarbg{
-  background:url("../img/blackbg.png");
-  background-repeat:repeat;
-  
-}
-.navbar-expand-lg .navbar-dark .bg-dark .fixed-top{
-  background:url("../img/blackbg.png");
-  background-repeat:repeat;
+  background: url('../img/blackbg.png')
 }
 
 .form-control{
@@ -393,3 +392,25 @@ button{
     }
   }
 
+
+  @-webkit-keyframes flicker {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+      opacity: .99;
+      text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.4), 1px -1px 0 rgba(255, 255, 255, 0.4), -1px 1px 0 rgba(255, 255, 255, 0.4), 1px 1px 0 rgba(255, 255, 255, 0.4), 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+      opacity: 0.4;
+      text-shadow: none;
+    }
+  }
+  
+  @keyframes flicker {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+      opacity: .99;
+      text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.4), 1px -1px 0 rgba(255, 255, 255, 0.4), -1px 1px 0 rgba(255, 255, 255, 0.4), 1px 1px 0 rgba(255, 255, 255, 0.4), 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+      opacity: 0.4;
+      text-shadow: none;
+    }
+  }
