@@ -127,11 +127,7 @@
 
    
 }
-.s1:hover{
-  -moz-transform: scale(2,2);
-  -webkit-transform: scale(2,2);
-  transform: scale(2,2);   
-}
+
 .s2{
   background:
   linear-gradient(rgba(30, 29, 29,0.9), rgba(43, 52, 61, 0.4)),
