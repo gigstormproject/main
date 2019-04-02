@@ -33,7 +33,7 @@
   
   <nav class="navbar-expand-lg navbar-dark fixed-top navbarbg " id="mainNav">
     <div class="container">
-      <a href="#page-top"  data-heading="Gigstorm">
+      <a href="#pubs" class="js-scroll-trigger"  data-heading="Gigstorm">
         <div class="logo">
         GigStorm
         <span
@@ -81,54 +81,29 @@
 
     <h1 class="title">No decent bands to book?</h1>
     <h2 class="title-bottom">Find upcoming Talents with GigStorm!</h2>
-    <h2 class="title-bottom"> Register as Band</h2>
-    <!--Collaps Symbol-->
-    <h3 class="text-center"><a href="#demo" data-toggle="collapse">
-      <span class="glyphicon glyphicon-menu-down"></span></a></h3>
-
-    <div id="demo" class="collapse">
-
-      <!-- Register Form Pub-->
-
-      <div class="h1">
-        <div class="box">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-
-          <div class="content">
-            <form action="/action_page.php" class="col-xs-12 col-sm-12 col-md-12">
-              <h2>Please fill all mandatory(*) fields</h2>
-              <div class="form-group">
-                <input type="text" class="form-control" id="name" placeholder="Enter Name *" name="name" required>
-              </div>
-
-              <div class="form-group">
-                <input type="text" class="form-control" id="surname" placeholder="Enter Second Name *" name="secondName"
-                  required>
-              </div>
-
-              <div class="form-group">
-                <input type="email" class="form-control" id="email" placeholder="Enter email *" name="email" required>
-              </div>
-              <div class="form-group">
-                <input type="password" class="form-control" id="pwd" placeholder="Enter password *" name="pwd" required>
-              </div>
-              <div class="form-group">
-                <input type="password" class="form-control" id="pwd" placeholder="Repeat password *" name="Rptpwd"
-                  required>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="remember"> <span>Remember me</span></label>
-              </div>
-              <button type="submit" class="btn btn-success">Submit <i class="glyphicon glyphicon-send"></i></button>
-            </form>
-          </div>
+    <h2 class="title-bottom"><a href=""><button type="button" class="btn btn-dark reg-left">Register as a band</button></a></h2>
+      
+    <div id="modal-wrapper" class="modal">
+  
+      <form class="modal-content animate" action="/action_page.php">
+            
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+          <img src="1.png" alt="Avatar" class="avatar">
+          <h1 style="text-align:center">Modal Popup Box</h1>
         </div>
-      </div>
+    
+        <div class="container">
+          <input type="text" placeholder="Enter Username" name="uname">
+          <input type="password" placeholder="Enter Password" name="psw">        
+          <button type="submit">Login</button>
+          <input type="checkbox" style="margin:26px 30px;"> Remember me      
+          <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
+        </div>
+        
+      </form>
+      
     </div>
-
 
 
   </section>
@@ -152,7 +127,7 @@
   <!-- Footer -->
   <footer class="py-5 navbarbg">
     <div class="container">
-      <p class="m-0 text-center text-white ">Copyright &copy; Your Website 2019</p>
+      <p class="m-0 text-center text-white ">Copyright &copy; Gigstorm Gmbh. 2019</p>
     </div>
     <!-- /.container -->
   </footer>
