@@ -3,6 +3,24 @@
 
 <head>
 
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="favicon.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -10,8 +28,6 @@
 
   <title>GigStorm</title>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
 
@@ -67,10 +83,29 @@
             </a>
           </li>
         </ul>
+        <button type="button" id="login-button" class="btn btn-warning login-button">Login</button>
       </div>
     </div>
   </nav>
 
+  <!-----------------------------------MODAL BOX FOR logging in---------------------------------->
+
+  <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="row">
+          <div class="col-6">
+            <h1>Login as a band</h1>
+          </div>
+          <div class="col-6">
+            <h1>Login as a venue</h1>
+          </div>
+        </div>
+      </div>
+    
+  </div>
 
 
   <section id="pubs" class="s1">
@@ -81,29 +116,7 @@
 
     <h1 class="title">No decent bands to book?</h1>
     <h2 class="title-bottom">Find upcoming Talents with GigStorm!</h2>
-    <h2 class="title-bottom"><a href=""><button type="button" class="btn btn-dark reg-left">Register as a band</button></a></h2>
-      
-    <div id="modal-wrapper" class="modal">
-  
-      <form class="modal-content animate" action="/action_page.php">
-            
-        <div class="imgcontainer">
-          <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
-          <img src="1.png" alt="Avatar" class="avatar">
-          <h1 style="text-align:center">Modal Popup Box</h1>
-        </div>
-    
-        <div class="container">
-          <input type="text" placeholder="Enter Username" name="uname">
-          <input type="password" placeholder="Enter Password" name="psw">        
-          <button type="submit">Login</button>
-          <input type="checkbox" style="margin:26px 30px;"> Remember me      
-          <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
-        </div>
-        
-      </form>
-      
-    </div>
+    <div class="button-container"><a href=""><button type="button" class="btn btn-dark register-button">Register as a pub</button></a></div>
 
 
   </section>
@@ -118,8 +131,9 @@
 
   <section id="bands" class="s3">
 
-    <h1 class="title">Venues you book are basically garbage?</h1>
-    <h2 class="title-bottom">Don´t let your Talent go to waste!</h2>>
+    <h1 class="title title-s3">Venues you book are basically garbage?</h1>
+    <h2 class="title-bottom">Don´t let your Talent go to waste!</h2>
+    <div class="button-container"><a href=""><button type="button" class="btn btn-dark register-button">Register as a band</button></a></div>
 
   </section>
 
@@ -142,6 +156,9 @@
   <!-- Custom JavaScript for this theme -->
   <script src="js/scrolling-nav.js"></script>
 
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -152,6 +169,7 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <script src="js/index.js"></script>
+
 </body>
 
 </html>
