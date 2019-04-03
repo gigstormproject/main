@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/weather-icons.min.css">
+<script> 
+  function getWeather() {
+      let latitude =  48.210033;
+      let longitude = 16.363449;
+      let url = "https://api.darksky.net/forecast/API_KEY/" + latitude + "," + longitude + "?callback=?&units=si";
+      $.getJSON(url, function(data) {
+        console.log(data);
+        let temp = data.currently.temperature;
+        let fahrenheit = (data.currently.temperature * 9 / 5 + 32).toFixed(1) + "&deg;F";
+        let celsius = data.currently.temperature.toFixed(1) + "&deg;C";
+        let description = data.currently.summary;
+        let icon = "wi wi-forecast-io-" + data.currently.icon;
+        let wind = " " + data.currently.windSpeed.toFixed(1) + " m/s ";
+        let humidity = " " + (data.currently.humidity * 100).toFixed(0) + " %";
+        
+        document.getElementById("temp").innerHTML = temp;
+        document.getElementById("description").innerHTML = description;
+        document.getElementById("wind").innerHTML = wind;
+        document.getElementById("humidity").innerHTML = humidity;
+               
+        //Heuitiger FC in Celsius
+        let todayMaxTemp = data.daily.data[0].temperatureMax.toFixed(0);
+        let todayMinTemp = data.daily.data[0].temperatureMin.toFixed(0);
+        let todayIcon = "wi wi-forecast-io-" + data.daily.data[0].icon;
+        document.getElementById("temp_max").innerHTML = todayMaxTemp;
+        document.getElementById("temp_min").innerHTML = todayMinTemp;
+        
+        //today forecast in F 
+        let todayMaxTempF = (data.daily.data[0].temperatureMax *9/5+32).toFixed(0);
+        let todayMinTempF = (data.daily.data[0].temperatureMin *9/5+32).toFixed(0);
+        let todayIconF = "wi wi-forecast-io-" + data.daily.data[0].icon;
+               
+        //Morgen forecast in C
+        let tomorrowMaxTemp = data.daily.data[1].temperatureMax.toFixed(0);
+        let tomorrowMinTemp = data.daily.data[1].temperatureMin.toFixed(0);
+        let tomorrowIcon = "wi wi-forecast-io-" + data.daily.data[1].icon;
+  
+        document.getElementById("temp_max_m").innerHTML = tomorrowMaxTemp;
+        document.getElementById("temp_min_m").innerHTML = tomorrowMinTemp;
+           
+        //... und in F
+        let tomorrowMaxTempF = (data.daily.data[1].temperatureMax *9/5+32).toFixed(0);
+        let tomorrowMinTempF = (data.daily.data[1].temperatureMin *9/5+32).toFixed(0);
+        let tomorrowIconF = "wi wi-forecast-io-" + data.daily.data[1].icon;
+          
+        //Übermorgen forecast in C
+        let afterTomorrowMaxTemp = data.daily.data[2].temperatureMax.toFixed(0);
+        let afterTomorrowMinTemp = data.daily.data[2].temperatureMin.toFixed(0);
+        let afterTomorrowIcon = "wi wi-forecast-io-" + data.daily.data[2].icon;
+        
+        //Übermorgen forecast in F
+        let afterTomorrowMaxTempF = (data.daily.data[2].temperatureMax *9/5+32).toFixed(0);
+        let afterTomorrowMinTempF = (data.daily.data[2].temperatureMin *9/5+32).toFixed(0);
+        let afterTomorrowIconF = "wi wi-forecast-io-" + data.daily.data[2].icon;
+                
+        //after after tomorrow forecast in C :))
+        let afterAfterTomorrowMaxTemp = data.daily.data[3].temperatureMax.toFixed(0);
+        let afterAfterTomorrowMinTemp = data.daily.data[3].temperatureMin.toFixed(0);
+        let afterAfterTomorrowIconF = "wi wi-forecast-io-" + data.daily.data[3].icon;
+        
+        //after after tomorrow forecast in F :))
+        let afterAfterTomorrowMaxTempF = (data.daily.data[3].temperatureMax *9/5+32).toFixed(0);
+        let afterAfterTomorrowMinTempF = (data.daily.data[3].temperatureMin *9/5+32).toFixed(0);
+        let afterAfterTomorrowIcon = "wi wi-forecast-io-" + data.daily.data[3].icon;
+  }, 2200);   // end of timeout 
+}
+
+</script>
+</head>
+<body>
+
+<h1>Weather from DarkSky Example</h1>
+<button id="btn1" onclick="getWeather()">GetWeather</button>
+
+<h2>Today Weather Forecast:</h2>  
+<span> Temperatur: </span><span id="temp"></span><br>
+<span> Beschreibung: </span><span id="description"></span><br>
+<span> Wind: </span><span id="wind"></span><br>
+<span> Luftfeuchtigkeit: </span><span id="humidity"></span><br>
+<span> Temperatur Maximal: </span><span id="temp_max"></span><br>
+<span> Temperatur Minimal: </span><span id="temp_min"></span><br>
+<h2>Tomorrow Weather Forecast:</h2>  
+<span> Temperatur Maximal: </span><span id="temp_max_m"></span><br>
+<span> Temperatur Minimal: </span><span id="temp_min_m"></span><br>
+
+</body>
+</html>
