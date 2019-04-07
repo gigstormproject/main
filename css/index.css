@@ -167,14 +167,6 @@
     color: white;
     overflow:hidden;
 
-    -moz-transform: scale(1,1);
-    -webkit-transform: scale(1,1);
-    transform: scale(1,1);
-
-    -moz-transition: all 5s;
-    -webkit-transition: all 5s;
-    transition:  5s;
-
    
 }
 
