@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 14. Apr 2019 um 19:04
+-- Erstellungszeit: 15. Apr 2019 um 00:13
 -- Server-Version: 10.1.38-MariaDB
 -- PHP-Version: 7.3.3
 
@@ -64,6 +64,26 @@ INSERT INTO `bar` (`Name`, `PLZ`, `Genre`) VALUES
 ('Viper Room', 1030, 'Heavy Metal'),
 ('Louisiana Blues Pub', 1040, 'Jazz'),
 ('Davis LiveMusic Club', 1210, 'Rock');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `users`
+--
+
+CREATE TABLE `users` (
+  `fname` varchar(255) DEFAULT NULL,
+  `lname` varchar(255) DEFAULT NULL,
+  `uname` varchar(255) DEFAULT NULL,
+  `upassword` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Daten für Tabelle `users`
+--
+
+INSERT INTO `users` (`fname`, `lname`, `uname`, `upassword`) VALUES
+('Michael', 'Prammer', 'mprammer', '$2y$10$ErjFh3FhHyz/KrNi4TLoB.qTwx4TTWxDniVCOmPhyGAs4r.OVDC2u');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
