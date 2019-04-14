@@ -1,6 +1,5 @@
-Adresse für XAMPP MySQL
-D:\XAMPP\mysql\data\db_gigstorm
+Datei für SQL-Import
 
-WICHTIG
-Adresse ist bei euch eventuell anders, je nachdem, wo ihr gespeichert habt.
-Bitte die bei euch korrekte Adresse selbst raussuchen und eingeben!
+URL: localhost:8081/myphpadmin
+
+Datei mithilfe der GUI importieren
