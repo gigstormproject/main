@@ -1,0 +1,66 @@
+diff a/index.html b/index.html	(rejected hunks)
+@@ -390,3 +390,64 @@
+     <script src="js/index.js"></script>
+   </body>
+ </html>
++=======
++
++    <h1 class="title">No decent bands to book?</h1>
++    <h2 class="title-bottom">Find upcoming Talents with GigStorm!</h2>
++    <div class="button-container"><a href="register_pub.html"><button type="button" class="btn btn-dark register-button">Register as a pub</button></a></div>
++
++
++  </section>
++
++  <section id="about" class="s2">
++    <h1 class="title">Gigstorm helps bands and venues find the best match of their lifetime!</h1>
++    <h2 class="title-bottom">Are you dreaming about the best gig you're ever gonna play? Are you overwhelmed, because of
++      the struggle
++      finding
++      an awesome venue? Does your mom cook shit?</h2>
++  </section>
++
++  <section id="bands" class="s3">
++
++    <h1 class="title title-s3">Venues you book are basically garbage?</h1>
++    <h2 class="title-bottom">Don´t let your Talent go to waste!</h2>
++    <div class="button-container"><a href="register_band.html"><button type="button" class="btn btn-dark register-button">Register as a band</button></a></div>
++  </section>
++
++
++  <!-- Footer -->
++  <footer class="py-5 navbarbg">
++    <div class="container">
++      <p class="m-0 text-center text-white ">Copyright &copy; Gigstorm Gmbh. 2019</p>
++    </div>
++    <!-- /.container -->
++  </footer>
++
++  <!-- Bootstrap core JavaScript -->
++  <script src="vendor/jquery/jquery.min.js"></script>
++  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
++
++  <!-- Plugin JavaScript -->
++  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
++
++  <!-- Custom JavaScript for this theme -->
++  <script src="js/scrolling-nav.js"></script>
++
++  
++  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
++  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
++  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
++    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
++    crossorigin="anonymous"></script>
++  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
++    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
++    crossorigin="anonymous"></script>
++  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
++    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
++    crossorigin="anonymous"></script>
++  <script src="js/index.js"></script>
++
++</body>
++
++</html>
++>>>>>>> c3833ffd72c8ca6eea6fc4df6dff5de073c5902c
