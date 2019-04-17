@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css?family=Allura|Raleway:200,300,400,500,600,700,800,900");
+
+@import url('https://fonts.googleapis.com/css?family=Monoton|Permanent+Marker|Righteous');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+/* logo font & neon animationen */
+@font-face{
+    font-family:logo;
+    src:url("../fonts/LOSTWAGE.TTF")
+  
+  }
+  
+  @-webkit-keyframes neon1 {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+    }
+  }
+  
+  @-moz-keyframes neon1 {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+    }
+  }
+  
+  @keyframes neon1 {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+    }
+  }
+  
+  @-webkit-keyframes neon3 {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+    }
+  }
+  
+  @-moz-keyframes neon3 {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+    }
+  }
+  
+  @keyframes neon3 {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+    }
+  }
+
+  .logo{
+    color: #FFDD1B;
+    font-family: 'Monoton', cursive;
+    font-size: 4em;
+    padding:0;
+    margin:0;
+    margin-right: 5vw;
+    -webkit-animation: flicker 1s linear infinite;
+    animation: flicker 8s linear infinite;
+  }
+  
+  .logoSmall{
+      color: #FF1177;
+      font-family: 'Monoton', cursive;
+   
+      font-size: 3em;
+      padding:0;
+      margin:0;
+      margin-right: 2vw;
+  
+      -moz-transition: all 0.5s;
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+      -moz-transform: scale(1,1);
+      -webkit-transform: scale(1,1);
+      transform: scale(1,1);
+    
+  }
+  .logoSmall:hover{
+    color: #FF1177;
+    -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+    animation: neon1 1.5s ease-in-out infinite alternate;
+    -moz-transform: scale(1.2,1.2);
+    -webkit-transform: scale(1.2,1.2);
+    transform: scale(1.2,1.2);      
+  
+  }
+  
+  .login-button {
+    font-size: 2em;
+    width: 7vw;
+    margin-right: -5vw;
+    margin-left: 5vw;
+    background-color:black;
+    color:white;
+  }
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+  color: #262626;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+p {
+  font-family: "Raleway", sans-serif;
+  color: #6a6a6a;
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 500;
+}
+
+.navbarbg{
+    background: url('../img/blackbg.png');
+    display:flex;
+}
+
+.mb-100 {
+  margin-bottom: 100px !important;
+}
+
+.about{
+    background: url('../img/dark-honeycomb.png');
+    background-attachment: fixed;
+    background-repeat: auto;
+    background-size: 400px 400px;
+    height: 100vh;
+    text-align: center;
+    color: white;
+    overflow:hidden;
+    padding: 200px;
+
+}
+
+.container{
+	flex-direction:row;
+	justify-content:center;
+    align-items:center;	
+    display:flex;
+}
+
+.section-heading {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 70px;
+    text-align: center; }
+    .section-heading h2 {
+      font-size: 48px;
+      color: #ffffff;
+      text-transform: uppercase;
+      font-weight: 900; }
+      @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        .section-heading h2 {
+          font-size: 40px; } }
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        .section-heading h2 {
+          font-size: 36px; } }
+      @media only screen and (max-width: 767px) {
+        .section-heading h2 {
+          font-size: 24px; } }
+    .section-heading h6 {
+      font-size: 16px;
+      margin-bottom: 0;
+      color: #c5afd9; }
+    .section-heading.dark h2 {
+      color: #262626; }
+    .section-heading.dark h6 {
+      color: #c1c1c1; }
+  
+
+@-webkit-keyframes flicker {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+      opacity: .99;
+      text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.4), 1px -1px 0 rgba(255, 255, 255, 0.4), -1px 1px 0 rgba(255, 255, 255, 0.4), 1px 1px 0 rgba(255, 255, 255, 0.4), 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+      opacity: 0.4;
+      text-shadow: none;
+    }
+  }
+  
+  @keyframes flicker {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+      opacity: .99;
+      text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.4), 1px -1px 0 rgba(255, 255, 255, 0.4), -1px 1px 0 rgba(255, 255, 255, 0.4), 1px 1px 0 rgba(255, 255, 255, 0.4), 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+      opacity: 0.4;
+      text-shadow: none;
+    }
+  }
