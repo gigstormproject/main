@@ -1,17 +1,18 @@
 body{
-    background:url("../img/register_band.jpg");
+    background:url("../img/register_pub.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    color: white;
 }
 
-.bg-light {
-    background-color: #f8f9fa!important;
+.bg-dark{
     width: 50%;
     margin-left: 25%;
     margin-top:10%;
 }
 
 .divider-text {
+    color:white;
     position: relative;
     text-align: center;
     margin-top: 15px;

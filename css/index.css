@@ -264,7 +264,6 @@ form h2{
   padding: 1.5vh;
   background-color: white;
   color: black;
-  font-style: italic;
   border-width: 3px;
 }
 @media(max-width:768px){
