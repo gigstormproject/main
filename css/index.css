@@ -62,40 +62,47 @@
   }
 }
 
+/* navbar stuff */
+
+.navbarbg{
+  background: url('../img/blackbg.png')
+}
+
+#page-top a:hover{
+  text-decoration: none;
+}
+
 .navigation-leiste{
   width:100%;
   position:fixed;
   background-color: black;
 }
-
-.logo{
+.logo {
   color: #FFDD1B;
   font-family: 'Monoton', cursive;
-  font-size: 4em;
-  padding:0;
-  margin:0;
+  font-size: 3em;
+  padding: 0;
+  margin: 0;
   margin-right: 5vw;
   -webkit-animation: flicker 1s linear infinite;
   animation: flicker 8s linear infinite;
 }
 
-.logoSmall{
-    color: #FF1177;
-    font-family: 'Monoton', cursive;
- 
-    font-size: 3em;
-    padding:0;
-    margin:0;
-    margin-right: 2vw;
-
-    -moz-transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-    -moz-transform: scale(1,1);
-    -webkit-transform: scale(1,1);
-    transform: scale(1,1);
-  
+.logoSmall {
+  color: #FF1177;
+  font-family: 'Monoton', cursive;
+  font-size: 2em;
+  padding: 0;
+  margin: 0;
+  margin-right: 2vw;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -moz-transform: scale(1,1);
+  -webkit-transform: scale(1,1);
+  transform: scale(1,1);
 }
+  
 .logoSmall:hover{
   color: #FF1177;
   -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
@@ -115,6 +122,8 @@
   background-color:black;
   color:white;
 }
+
+
 
 /*------------------------LOGINPOPUP-----------------------------*/
 
@@ -157,6 +166,8 @@
 
 /*------------------------------------------------------------------------------*/
 
+
+
 .s1{
     background: url('../img/background.jpg');
     background-attachment: fixed;
@@ -166,12 +177,6 @@
     text-align: center;
     color: white;
     overflow:hidden;
-
-   
-}
-
-#page-top a:hover{
-  text-decoration: none;
 }
 
 .s2{
@@ -188,9 +193,14 @@
     color: white;
 }
 
-.s2 h1{
-  padding-top:25vh;
+.s2 h1 {
+  padding-top: 12vh;
   padding-bottom: 2vh;
+  font-size:4.3em;
+}
+
+.s2 h2{
+  font-size:2.7em;
 }
 
 .s3{
@@ -201,6 +211,14 @@
   background-attachment: fixed;
   color: black;
 }
+
+.title-s3 {
+  color: white;
+  text-align: center;
+  padding-top: 25vh;
+  font-size: 5em;
+}
+
 .title{
     color: white;
     text-align: center;
@@ -220,10 +238,6 @@
 	justify-content:center;
   align-items:center;
   width:100vw;
-}
-
-.navbarbg{
-  background: url('../img/blackbg.png')
 }
 
 .form-control{
@@ -267,16 +281,6 @@ form h2{
   border-width: 3px;
 }
 @media(max-width:768px){
-
-.logo {
-    color: #FFDD1B;
-    font-family: 'Monoton', cursive;
-    font-size: 3em;
-    padding: 0;
-    margin: 0;
-    margin-right: 5vw;
-    -webkit-animation: flicker 1s linear infinite;
-    animation: flicker 8s linear infinite;
 }
 
 .navbar-toggler {
@@ -287,43 +291,6 @@ form h2{
   border: 1px solid transparent;
   border-radius: .25rem;
 }
-
-.logoSmall {
-  color: #FF1177;
-  font-family: 'Monoton', cursive;
-  font-size: 2em;
-  padding: 0;
-  margin: 0;
-  margin-right: 2vw;
-  -moz-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -moz-transform: scale(1,1);
-  -webkit-transform: scale(1,1);
-  transform: scale(1,1);
-}
-
-.s2 h1 {
-  padding-top: 12vh;
-  padding-bottom: 2vh;
-  font-size:4.3em;
-}
-
-.s2 h2{
-  font-size:2.7em;
-}
-
-.title-s3 {
-  color: white;
-  text-align: center;
-  padding-top: 25vh;
-  font-size: 5em;
-}
-  
-}
-
-
-  /*end of register form*/
 
   /*register box design*/
 
