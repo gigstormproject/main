@@ -115,12 +115,13 @@
 }
 
 .login-button {
-  font-size: 2em;
+  font-size: 1.5em;
   width: 7vw;
   margin-right: -5vw;
   margin-left: 5vw;
   background-color:black;
   color:white;
+  border-color:white;
 }
 
 /* search bar */
@@ -152,7 +153,7 @@
 }
 
 .searchbar:focus {
-  width: 400px;
+  width: 200px;
   font-size: 1em;
   transition: 0.3s;
   /* Stops the input box from inheriting the styling from the inputs on the request form */
