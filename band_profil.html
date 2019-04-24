@@ -1,11 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-   
-
+  <div id="icon">
     <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
@@ -23,8 +21,9 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+  </div>
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -38,7 +37,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Bandprofil</title>
+  <title id="title"></title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
@@ -85,20 +84,20 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#pubs">
-              <div class="logoSmall"> Pubs
+              <div class="logoSmall"> About
               </div>
             </a>
 
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#about">
-              <div class="logoSmall"> About
+              <div class="logoSmall"> TourDates
               </div>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#bands">
-              <div class="logoSmall"> Bands
+              <div class="logoSmall"> Similiar
               </div>
             </a>
           </li>
@@ -115,14 +114,16 @@
         <!-- About Thumbnail -->
         <div class="col-12 col-lg-6">
             <div class="about-thumbnail mb-100">
-                <img id="bandpic" src="" alt="Hier bandpic">
+                <img id="bandpic" src="" alt="Hier bandpic"><br>
             </div>
+           
         </div>
         <!-- About Content -->
         <div class="col-12 col-lg-6 section-heading">
             <div class="about-content mb-100">
                 
                 <h2 id="bandname"> Artist Name</h2>
+                <span class="label" id="ontour" style=background-color:red>Not On-Tour</span>
                 <p id="bandbio"> Bandbio</p>
         
             </div>

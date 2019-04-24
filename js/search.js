@@ -13,11 +13,15 @@ function search() {
     let name = data.artist.name;
     let pic = data.artist.image[3]["#text"];
     let bio = data.artist.bio.summary;
-    let tags = data.artist.tags.tag[0].name;
+    //let tags = data.artist.tags.tag[0].name;
+    let ontour = data.artist.ontour =="0" ? false : true;
+    document.getElementById("title").innerHTML = "GigStorm: " + name;
     document.getElementById("bandname").innerHTML = name;
     document.getElementById("bandpic").src = pic;
     document.getElementById("bandbio").innerHTML = bio;
-    document.getElementById("tags").innerHTML = tags;
+    //document.getElementById("tags").innerHTML = tags;
+    document.getElementById("ontour").innerHTML = ontour ? "On Tour" : "Not On Tour";
+    document.getElementById("ontour").style.backgroundColor = ontour ? "green" : "red";
 
     
   });
