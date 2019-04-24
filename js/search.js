@@ -1,7 +1,7 @@
 function search() {
   bandname = localStorage.getItem("band");
-  var url = "http://localhost:8081//lastFmApi.php?bandname=" + bandname + "&method=1";
-  var albumurl = "http://localhost:8081/lastFmApiAlbum.php?bandname=" + bandname + "&method=2";
+  var url = "http://localhost:8081/lastFmApi.php?bandname=" + bandname + "&method=1";
+  var albumurl = "http://localhost:8081/lastFmApi.php?bandname=" + bandname + "&method=2";
 
   /*holt ein JSON file über lastFmApi.php 
       dann werden verschiedene variablen aus diesem json-files definiert (z.B. die url des bildes oder bandname)
