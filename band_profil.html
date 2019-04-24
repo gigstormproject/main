@@ -4,6 +4,8 @@
 
 <head>
 
+   
+
     <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
@@ -25,6 +27,8 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
 <!------ Include the above in your HEAD tag ---------->
 
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -47,13 +51,15 @@
   <!-- Our general & index style sheets-->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/band_profil.css">
-
   <!-- Javascript for lastFm API-->
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/search.js" type="text/javascript"></script> 
 
-
+  <!-- for the album swiper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.css"></link>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.css"></link> 
 </head>
 
 <body id="page-top">
@@ -97,7 +103,6 @@
             </a>
           </li>
         </ul>
-        <button type="button" id="login-button" class="btn btn-warning login-button">Login</button>
       </div>
     </div>
   </nav>
@@ -106,28 +111,44 @@
     
 
     
-                <div class="row">
-                    <!-- About Thumbnail -->
-                    <div class="col-12 col-lg-6">
-                        <div class="about-thumbnail mb-100">
-                            <img id="bandpic" src="" alt="Hier bandpic">
-                        </div>
-                    </div>
-                    <!-- About Content -->
-                    <div class="col-12 col-lg-6 section-heading">
-                        <div class="about-content mb-100">
-                            
-                            <h2 id="bandname"> Artist Name</h2>
-                            <p id="bandbio"></p>
-                        </div>
-                    </div>
-                </div>
+    <div class="row">
+        <!-- About Thumbnail -->
+        <div class="col-12 col-lg-6">
+            <div class="about-thumbnail mb-100">
+                <img id="bandpic" src="" alt="Hier bandpic">
             </div>
-    
-  
- 
-         
+        </div>
+        <!-- About Content -->
+        <div class="col-12 col-lg-6 section-heading">
+            <div class="about-content mb-100">
+                
+                <h2 id="bandname"> Artist Name</h2>
+                <p id="bandbio"> Bandbio</p>
+        
+            </div>
+        </div>
+        
+    </div>
 
+    <div class="row swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" id="topalbum1"></div>
+        <div class="swiper-slide" id="topalbum2"> </div>
+        <div class="swiper-slide" id="topalbum3" ></div>
+        <div class="swiper-slide" id="topalbum4"></div>
+        <div class="swiper-slide" id="topalbum5"></div>
+        <div class="swiper-slide" id="topalbum6"></div> 
+        <div class="swiper-slide" id="topalbum7"></div>
+        <div class="swiper-slide" id="topalbum8"></div>
+        <div class="swiper-slide" id="topalbum9"></div>
+        <div class="swiper-slide" id="topalbum10"></div>
+      </div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+        </div>
+
+  
   </section>
 
   <section >

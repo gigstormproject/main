@@ -67,7 +67,7 @@
   .logo{
     color: #FFDD1B;
     font-family: 'Monoton', cursive;
-    font-size: 4em;
+    font-size: 2em;
     padding:0;
     margin:0;
     margin-right: 5vw;
@@ -79,7 +79,7 @@
       color: #FF1177;
       font-family: 'Monoton', cursive;
    
-      font-size: 3em;
+      font-size: 2em;
       padding:0;
       margin:0;
       margin-right: 2vw;
@@ -212,3 +212,12 @@ p {
       text-shadow: none;
     }
   }
+
+/* album swiper */
+  .swiper-container {
+    height: 300px;
+  }
+
+  
+
+ 
