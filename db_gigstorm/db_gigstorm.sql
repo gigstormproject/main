@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 15. Apr 2019 um 00:13
+-- Erstellungszeit: 24. Apr 2019 um 02:25
 -- Server-Version: 10.1.38-MariaDB
 -- PHP-Version: 7.3.3
 
@@ -75,15 +75,18 @@ CREATE TABLE `users` (
   `fname` varchar(255) DEFAULT NULL,
   `lname` varchar(255) DEFAULT NULL,
   `uname` varchar(255) DEFAULT NULL,
-  `upassword` varchar(255) DEFAULT NULL
+  `upassword` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Daten für Tabelle `users`
 --
 
-INSERT INTO `users` (`fname`, `lname`, `uname`, `upassword`) VALUES
-('Michael', 'Prammer', 'mprammer', '$2y$10$ErjFh3FhHyz/KrNi4TLoB.qTwx4TTWxDniVCOmPhyGAs4r.OVDC2u');
+INSERT INTO `users` (`fname`, `lname`, `uname`, `upassword`, `email`) VALUES
+('Michael', 'Prammer', 'mprammer', '$2y$10$ErjFh3FhHyz/KrNi4TLoB.qTwx4TTWxDniVCOmPhyGAs4r.OVDC2u', NULL),
+('test', 'test', 'test', '$2y$10$2Cylqx01z5E2m2MrmidxEeelm2/Cn0pO9UPVW7i5EZhfebFjs2Hda', NULL),
+('test2', 'test2', 'test2', '$2y$10$hmaQbUilzEGxcbmXW5R5.O6mrHcy2SusTvRoTR.S8HzVcT2nZiZBa', 'test2@example.com');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
