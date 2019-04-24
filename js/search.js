@@ -1,5 +1,6 @@
 function search() {
   bandname = localStorage.getItem("band");
+  alert(bandname);
   var url = "http://localhost:8081/Bar/main/lastFmApi.php?bandname=" + bandname;
   var albumurl = "http://localhost:8081/Bar/main/lastFmApiAlbum.php?bandname=" + bandname;
 
