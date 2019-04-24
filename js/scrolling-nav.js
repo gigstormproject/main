@@ -12,6 +12,7 @@
         }, 1000, "easeInOutExpo");
         return false;
       }
+      
     }
   });
 

@@ -27,8 +27,7 @@ function goSearch() {
     localStorage.setItem("band", document.getElementById("band").value);
   } else {
     // hier Fehlermeldungs-Popup?
-    document.getElementById("result").innerHTML =
-      "Sorry, your browser does not support Web Storage...";
+    alert("Storage not activated");
   }
   window.location.href="band_profil.html";
 }
