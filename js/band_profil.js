@@ -13,7 +13,7 @@ function search() {
       let bio = data.artist.bio.summary;
       //let tags = data.artist.tags.tag[0].name;
       let ontour = data.artist.ontour =="0" ? false : true;
-      document.getElementById("title").innerHTML = "GigStorm: " + name;
+      document.getElementById("title").innerHTML = "Profil: " + name;
       document.getElementById("bandname").innerHTML = name;
       document.getElementById("bandpic").src = pic;
       document.getElementById("bandbio").innerHTML = bio;

@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-  
   <div name="icon stuff">
     <link rel="apple-touch-icon" sizes="57x57" href="../favicon.ico/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="../favicon.ico/apple-icon-60x60.png">
@@ -29,139 +28,128 @@
   <meta name="author" content="">
 
   <title>GigStorm</title>
-  
-  <!-- Bootstrap core CSS -->
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!---Css imports-->
+  <div>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- scrolling navbar -->
+    <link href="../css/scrolling-nav.css" rel="stylesheet">
+    <!-- Our general style sheet -->
+    <link rel="stylesheet" href="../css/index.css">
+    <!-- Font Awesome stylesheet for searchbar -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> 
+  </div>
 
-  <!-- scrolling navbar -->
-  <link href="../css/scrolling-nav.css" rel="stylesheet">
-  <!-- Our general & index style sheets-->
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/index.css">
-
-  <script src="../js/band_profil.js" type="text/javascript"></script> 
-
-  <!-- Font Awesome stylesheet for searchbar -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
+  <!-- Navigation -->
+  <div>
+    <nav class="navbar-expand-lg navbar-dark fixed-top navbarbg " id="mainNav">
+        <div class="container">
+          <a href="#pubs" class="js-scroll-trigger"  data-heading="Gigstorm">
+            <div class="logo">
+            GigStorm
+            <span
+              class="glyphicon glyphicon-flash"></span>
+          </div>
+            </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#pubs">
+                  <div class="logoSmall"> Pubs
+                  </div>
+                </a>
+    
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#about">
+                  <div class="logoSmall"> About
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#bands">
+                  <div class="logoSmall"> Bands
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <input id="bandInput" class="searchbar" type="text" placeholder="Search for a band..." autocomplete="off">
+            <a id="bandSearch" class="btn-search" onclick="goSearch()"><i class="fa fa-search" style=color:whitesmoke> </i></a>   
+            <button type="button" data-toggle="modal" data-target="#loginModal" id="login-button" href="#login" data-backdrop="false" class="btn btn-warning login-button modal-trigger">Login</button>
+          </div>
+        </div>
+      </nav>
+  </div>
 </head>
 
 <body id="page-top">
-
-    
-<!-- Navigation -->
-  
-  <nav class="navbar-expand-lg navbar-dark fixed-top navbarbg " id="mainNav">
-    <div class="container">
-      <a href="#pubs" class="js-scroll-trigger"  data-heading="Gigstorm">
-        <div class="logo">
-        GigStorm
-        <span
-          class="glyphicon glyphicon-flash"></span>
-      </div>
-       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#pubs">
-              <div class="logoSmall"> Pubs
-              </div>
-            </a>
-
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">
-              <div class="logoSmall"> About
-              </div>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#bands">
-              <div class="logoSmall"> Bands
-              </div>
-            </a>
-          </li>
-        </ul>
-        <input id="bandInput" class="searchbar" type="text" placeholder="Search for a band..." autocomplete="off">
-        <a id="bandSearch" class="btn-search" onclick="goSearch()"><i class="fa fa-search" style=color:whitesmoke> </i></a>   
-        <button type="button" data-toggle="modal" data-target="#loginModal" id="login-button" href="#login" data-backdrop="false" class="btn btn-warning login-button modal-trigger">Login</button>
-      </div>
-    </div>
-  </nav>
-
   <!-----------------------------------MODAL BOX FOR logging in---------------------------------->
-
-  <div class="modal fade" id="loginModal" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form name="login" action="../php/login.php" method="post">
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <i class="fas fa-envelope prefix grey-text"></i>
-          <input name="uname" type="text" placeholder="Username" class="form-control validate">
+  <div>
+    <div class="modal fade" id="loginModal" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center">
+              <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form name="login" action="../php/login.php" method="post">
+            <div class="modal-body mx-3">
+              <div class="md-form mb-5">
+                <i class="fas fa-envelope prefix grey-text"></i>
+                <input name="uname" type="text" placeholder="Username" class="form-control validate">
+              </div>
+      
+              <div class="md-form mb-4">
+                <i class="fas fa-lock prefix grey-text"></i>
+                <input name="upassword" type="password" placeholder="Password" class="form-control validate">
+              </div>
+      
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <input name="submit" type="submit" placeholder="Submit"/>
+            </div>
+          </form>
+          </div>
         </div>
-
-        <div class="md-form mb-4">
-          <i class="fas fa-lock prefix grey-text"></i>
-          <input name="upassword" type="password" placeholder="Password" class="form-control validate">
-        </div>
-
       </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <input name="submit" type="submit" placeholder="Submit"/>
+      
+      <div class="text-center">
+        <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Launch
+          Modal Login Form</a>
       </div>
-    </form>
-    </div>
+      
+
   </div>
-</div>
-
-<div class="text-center">
-  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Launch
-    Modal Login Form</a>
-</div>
-
 
   <section id="pubs" class="s1">
-    
-      <div class="light"></div>
-      <div class="light"></div>
-
-
+    <div class="light"></div>
+    <div class="light"></div>
     <h1 class="title">No decent bands to book?</h1>
     <h2 class="title-bottom">Find upcoming Talents with GigStorm!</h2>
     <div class="button-container"><a href="register_pub.html"><button type="button" class="btn btn-dark register-button">Register as a pub</button></a></div>
-
-
   </section>
 
   <section id="about" class="s2">
     <h1 class="title">Gigstorm helps bands and venues find the best match of their lifetime!</h1>
     <h2 class="title-bottom">Are you dreaming about the best gig you're ever gonna play? Are you overwhelmed, because of
-      the struggle
-      finding
-      an awesome venue? Does your mom cook shit?</h2>
+      the struggle offinding an awesome venue? Does your mom cook shit?
+    </h2>
   </section>
 
   <section id="bands" class="s3">
-
     <h1 class="title title-s3">Venues you book are basically garbage?</h1>
     <h2 class="title-bottom">Don´t let your Talent go to waste!</h2>
     <div class="button-container"><a href="register_band.html"><button type="button" class="btn btn-dark register-button">Register as a band</button></a></div>
   </section>
-
 
   <!-- Footer -->
   <footer class="py-5 navbarbg">
@@ -171,6 +159,8 @@
     <!-- /.container -->
   </footer>
 
+  <!--- Javascript stuff-->
+  <div>
   <!-- Bootstrap core JavaScript -->
   <script src="../vendor/jquery/jquery.min.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -194,6 +184,7 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <script src="../js/index.js"></script>
+  </div>
 
 </body>
 
