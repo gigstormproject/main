@@ -1,4 +1,8 @@
+window.onload = search();
+
+
 function search() {
+
   bandname = localStorage.getItem("band");
   var url = "http://localhost:8081/lastFmApi.php?bandname=" + bandname + "&method=1";
   var albumurl = "http://localhost:8081/lastFmApi.php?bandname=" + bandname + "&method=2";
@@ -83,9 +87,9 @@ function search() {
   });
 }
 
-window.onload = search();
 
 
+// album swiper for top albums
 
 $.getScript('https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js', function()
 {
@@ -113,4 +117,4 @@ $.getScript('https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.j
   });
 });
 
-// album slider
+

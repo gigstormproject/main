@@ -23,17 +23,16 @@ span.onclick = function() {
 function goSearch() {
   
   if (typeof Storage !== "undefined") {
-    // Store
-    localStorage.setItem("band", document.getElementById("band").value);
+    localStorage.setItem("band", document.getElementById("bandInput").value);
+    window.location.href="band_search.html";
   } else {
-    // hier Fehlermeldungs-Popup?
     alert("Storage not activated");
   }
-  window.location.href="band_profil.html";
+  
 }
 
 
-var input = document.getElementById("band");
+var input = document.getElementById("bandInput");
 input.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
    event.preventDefault();
