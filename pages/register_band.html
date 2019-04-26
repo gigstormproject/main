@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-    <link rel="stylesheet" href="css/register_band.css">
+    <link rel="stylesheet" href="../css/register_band.css">
     <title>Register as a Band</title>
   </head>
   <body>
@@ -18,11 +18,11 @@
 <article class="card-body mx-auto" style="max-width: 400px;">
 	<h4 class="card-title mt-3 text-center">Create a Band Account</h4>
 	<p class="text-center">Finding the perfect venue has never been easier!</p>
-	<form name="register" action="Login_final/inc/php/register_band.php" method="post">
+	<form name="register" action="../php/register_band.php" method="post">
 	<div class="form-group input-group">
 		<div class="input-group-prepend">
 		 </div>
-        <input name="fname" class="form-control" placeholder="Band name" type="text" required>
+        <input name="bname" class="form-control" placeholder="Band name" type="text" required>
     </div> <!-- form-group// -->
     <div class="form-group input-group">
 		<div class="input-group-prepend">
@@ -40,13 +40,13 @@
     	<div class="input-group-prepend">
 		    <span class="input-group-text"><i class="fas fa-music"></i></span>
 		</div>
-            <select class="form-control" id="exampleFormControlSelect1">
-            <option>Pop</option>
-            <option>Rock</option>
-            <option>Alternative</option>
-            <option>Raggie</option>
-            <option>Other</option>
-            </select>
+        <select class="form-control" id="exampleFormControlSelect1" name="genre">
+                <option>Pop</option>
+                <option>Rock</option>
+                <option>Alternative</option>
+                <option>Raggie</option>
+                <option>Other</option>
+                </select>
     </div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">

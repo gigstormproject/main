@@ -4,14 +4,8 @@ window.onload = search();
 function search() {
 
   bandname = localStorage.getItem("band");
-  var url = "http://localhost:8081/lastFmApi.php?bandname=" + bandname + "&method=1";
-  var albumurl = "http://localhost:8081/lastFmApi.php?bandname=" + bandname + "&method=2";
-
-  /*holt ein JSON file über lastFmApi.php 
-      dann werden verschiedene variablen aus diesem json-files definiert (z.B. die url des bildes oder bandname)
-      und über js (getElementbyId) an profil.html übergeben.
-      So soll das profil.html immer die informationen über die aktuelle band auf profil.html angeben.
-      */
+  var url = "http://localhost:8081/php/lastFmApi.php?bandname=" + bandname + "&method=1";
+  var albumurl = "http://localhost:8081/php/lastFmApi.php?bandname=" + bandname + "&method=2";
 
   $.getJSON(url, function(data) {
     let name = data.artist.name;
@@ -86,7 +80,6 @@ function search() {
     
   });
 }
-
 
 
 // album swiper for top albums

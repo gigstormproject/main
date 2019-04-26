@@ -3,8 +3,8 @@ function search() {
    
     bandname = getCookie("band");
       
-    var url = "http://localhost:8081/lastFmApi.php?bandname=" + bandname + "&method=1";
-    var albumurl = "http://localhost:8081/lastFmApi.php?bandname=" + bandname + "&method=2";
+    var url = "http://localhost:8081/php/lastFmApi.php?bandname=" + bandname + "&method=1";
+    var albumurl = "http://localhost:8081/php/lastFmApi.php?bandname=" + bandname + "&method=2";
 
   
     $.getJSON(url, function(data) {

@@ -3,7 +3,6 @@
 
 <?php
  
- // diesem file wird eine url mit bandnamen übergeben, das ein json-file von last.fm holt, mit dem profil.js arbeiten 
 $bandname = $_GET["bandname"];
 $method = $_GET["method"];
 

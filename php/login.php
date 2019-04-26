@@ -23,7 +23,7 @@ if($loggedIn){
     setcookie("band", $_POST['uname'], time() + (86400 * 30), "/");
     echo "
     <script>
-    window.location.href='/band_profil.html';
+    window.location.href='/pages/band_profil.html';
     </script>
     ";
 

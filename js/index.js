@@ -24,7 +24,7 @@ function goSearch() {
   
   if (typeof Storage !== "undefined") {
     localStorage.setItem("band", document.getElementById("bandInput").value);
-    window.location.href="band_search.html";
+    window.location.href="../pages/band_search.html";
   } else {
     alert("Storage not activated");
   }
