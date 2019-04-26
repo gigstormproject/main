@@ -521,4 +521,37 @@ form h2{
   ::-webkit-scrollbar { 
     display: none; 
 }
-I'm not
+
+
+/* former style.css */
+
+.navbar-brand{
+  font-size:1.5em;
+  font-style: oblique;
+  padding-right: 10px;
+}
+
+.login-btn{
+  color: white;
+  background-color: red;
+  border-color: white;
+}
+
+.login-btn:hover{
+  color: white;
+  background-color: gold;
+  border-color: white;
+}
+
+.register-btn{
+  margin-left: 10px;
+  color: white;
+  background-color: black;
+  border-color: white;
+}
+
+.register-btn:hover{
+  color: white;
+  background-color: gold;
+  border-color: white;
+}
