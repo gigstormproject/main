@@ -14,7 +14,6 @@ if(isset($_POST['submit']))
     $params = array($bname, $uname, $email, $genre, $upassword);
     $results = dataQuery($query, $params);
 
-    
     echo 1 == $results ? 'success' : 'failure';
 }
 

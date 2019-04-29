@@ -2,8 +2,6 @@
 
 include 'pdo_connect.php';
 
-
-
 if(isset($_POST['uname']))
 {
     $query = "SELECT `upassword` FROM `band` WHERE `uname` = ?";
@@ -14,7 +12,6 @@ if(isset($_POST['uname']))
 $hash = $results[0]['upassword']; // first and only row if username exists;
 
 $loggedIn = password_verify($_POST['upassword'], $hash);
-
 
 if($loggedIn){
     session_start();

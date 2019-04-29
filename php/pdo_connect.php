@@ -8,7 +8,6 @@ define('PASS', '');
 
 function dataQuery($query, $params)
 {
-    // what kind of query is this?
     $queryType = explode(' ', $query);
 
     // establish database connection
