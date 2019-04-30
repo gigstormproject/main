@@ -25,58 +25,20 @@ function search() {
   });
 
   $.getJSON(albumurl, function(data) {
-    let name = data.topalbums["@attr"].artist;
-    let topalbum1 = data.topalbums.album[0].name;
-    let topalbum1pic = data.topalbums.album[0].image[3]["#text"];
-    document.getElementById("topalbum1").style.backgroundImage = 'url('+(topalbum1pic)+')';
-    document.getElementById("topalbum1").style.backgroundSize = "100%";
 
-    let topalbum2 = data.topalbums.album[1].name;
-    let topalbum2pic = data.topalbums.album[1].image[3]["#text"];
-    document.getElementById("topalbum2").style.backgroundImage = 'url('+(topalbum2pic)+')';
-    document.getElementById("topalbum2").style.backgroundSize = "100%";
+    var imageURLs = data.topalbums.album.map(album =>{
+      array =[];
+      array.push(album.image[3]["#text"]);
+      return array;
+    })
 
-    let topalbum3 = data.topalbums.album[2].name;
-    let topalbum3pic = data.topalbums.album[2].image[3]["#text"];
-    document.getElementById("topalbum3").style.backgroundImage = 'url('+(topalbum3pic)+')';
-    document.getElementById("topalbum3").style.backgroundSize = "100%";
+    for(var i=0; i< 10; i++){
+      url = "url(" + imageURLs[i] + ")";
+      album = "topalbum" + (i+1);
+      document.getElementById(album).style.backgroundImage = url;
+      document.getElementById(album).style.backgroundSize = "100%";
+    }
 
-    let topalbum4 = data.topalbums.album[3].name;
-    let topalbum4pic = data.topalbums.album[3].image[3]["#text"];
-    document.getElementById("topalbum4").style.backgroundImage = 'url('+(topalbum4pic)+')';
-    document.getElementById("topalbum4").style.backgroundSize = "100%";
-
-    let topalbum5 = data.topalbums.album[4].name;
-    let topalbum5pic = data.topalbums.album[4].image[3]["#text"];
-    document.getElementById("topalbum5").style.backgroundImage = 'url('+(topalbum5pic)+')';
-    document.getElementById("topalbum5").style.backgroundSize = "100%";
-
-    let topalbum6 = data.topalbums.album[5].name;
-    let topalbum6pic = data.topalbums.album[5].image[3]["#text"];
-    document.getElementById("topalbum6").style.backgroundImage = 'url('+(topalbum6pic)+')';
-    document.getElementById("topalbum6").style.backgroundSize = "100%";
-
-    let topalbum7 = data.topalbums.album[6].name;
-    let topalbum7pic = data.topalbums.album[6].image[3]["#text"];
-    document.getElementById("topalbum7").style.backgroundImage = 'url('+(topalbum7pic)+')';
-    document.getElementById("topalbum7").style.backgroundSize = "100%";
-
-    
-    let topalbum8 = data.topalbums.album[7].name;
-    let topalbum8pic = data.topalbums.album[7].image[3]["#text"];
-    document.getElementById("topalbum8").style.backgroundImage = 'url('+(topalbum8pic)+')';
-    document.getElementById("topalbum8").style.backgroundSize = "100%";
-
-    
-    let topalbum9 = data.topalbums.album[8].name;
-    let topalbum9pic = data.topalbums.album[8].image[3]["#text"];
-    document.getElementById("topalbum9").style.backgroundImage = 'url('+(topalbum9pic)+')';
-    document.getElementById("topalbum9").style.backgroundSize = "100%";
-    
-    let topalbum10 = data.topalbums.album[9].name;
-    let topalbum10pic = data.topalbums.album[9].image[3]["#text"];
-    document.getElementById("topalbum10").style.backgroundImage = 'url('+(topalbum10pic)+')';
-    document.getElementById("topalbum10").style.backgroundSize = "100%";
     
   });
 }
