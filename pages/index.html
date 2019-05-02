@@ -82,7 +82,15 @@
             </ul>
             <input id="bandInput" class="searchbar" type="text" placeholder="Search for a band..." autocomplete="off">
             <a id="bandSearch" class="btn-search" onclick="goSearch()"><i class="fa fa-search" style=color:whitesmoke> </i></a>   
-            <button type="button" data-toggle="modal" data-target="#loginModal" id="login-button" href="#login" data-backdrop="false" class="btn btn-warning login-button modal-trigger">Login</button>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-warning login-button">Login</button>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a type="button" data-toggle="modal" data-target="#loginModal" id="login-button" href="#login" data-backdrop="false" class="modal-trigger dropdown-item" href="#">As a band</a>
+                <a type="button" data-toggle="modal" data-target="#loginModal2" id="login-button" href="#login2" data-backdrop="false" class="modal-trigger dropdown-item" href="#">As a venue</a>
+              </div>
+            </li>
           </div>
         </div>
       </nav>
@@ -96,7 +104,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header text-center">
-              <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+              <h4 class="modal-title w-100 font-weight-bold">Sign in as a band</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -105,9 +113,8 @@
             <div class="modal-body mx-3">
               <div class="md-form mb-5">
                 <i class="fas fa-envelope prefix grey-text"></i>
-                <input name="uname" type="text" placeholder="Username" class="form-control validate">
+                <input name="uname" type="text" placeholder="Bandname/Username" class="form-control validate">
               </div>
-      
               <div class="md-form mb-4">
                 <i class="fas fa-lock prefix grey-text"></i>
                 <input name="upassword" type="password" placeholder="Password" class="form-control validate">
@@ -121,13 +128,37 @@
           </div>
         </div>
       </div>
-      
-      <div class="text-center">
-        <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Launch
-          Modal Login Form</a>
-      </div>
-      
+  </div>
 
+  <div>
+    <div class="modal fade" id="loginModal2" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center">
+              <h4 class="modal-title w-100 font-weight-bold">Sign in as a venue</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form name="login2" action="../php/login2.php" method="post">
+            <div class="modal-body mx-3">
+              <div class="md-form mb-5">
+                <i class="fas fa-envelope prefix grey-text"></i>
+                <input name="uname" type="text" placeholder="Username" class="form-control validate">
+              </div>
+              <div class="md-form mb-4">
+                <i class="fas fa-lock prefix grey-text"></i>
+                <input name="upassword" type="password" placeholder="Password" class="form-control validate">
+              </div>
+      
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <input name="submit" type="submit" placeholder="Submit"/>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
   </div>
 
   <section id="pubs" class="s1">
@@ -147,7 +178,7 @@
 
   <section id="bands" class="s3">
     <h1 class="title title-s3">Venues you book are basically garbage?</h1>
-    <h2 class="title-bottom">Don´t let your Talent go to waste!</h2>
+    <h2 class="title-bottom">Don't let your Talent go to waste!</h2>
     <div class="button-container"><a href="register_band.html"><button type="button" class="btn btn-dark register-button">Register as a band</button></a></div>
   </section>
 
