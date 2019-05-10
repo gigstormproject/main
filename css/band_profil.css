@@ -147,12 +147,24 @@ p {
     background-attachment: fixed;
     background-repeat: auto;
     background-size: 400px 400px;
-    height: 160vh;
     text-align: center;
     color: white;
     overflow:hidden;
-    padding: 200px;
+    padding: 50px;
+    padding-top: 100px;
+}
 
+#TourDates tbody{
+  background-color: transparent;
+}
+
+#TourDates tr {
+  background-color: transparent;
+ 
+}
+
+#TourDates td {
+  padding: 15px;
 }
 
 .container{

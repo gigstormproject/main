@@ -1,4 +1,3 @@
-
 window.onload = loadContent();
 
 function loadContent(){
@@ -70,12 +69,28 @@ function getAlbumInfo(albumurl){
 }
 
 function createEventTable(events){
-  var list = document.createElement("LI");  
-  var nextEvent = document.createTextNode(events[0].displayName);
-  list.appendChild(nextEvent);
-  document.getElementById("TourDates").appendChild(list);
-}
+  
+  var table = document.createElement("table");
 
+  for (var i=0; i<events.length; i++){
+    var tr = table.insertRow();
+    var td = tr.insertCell();
+    for(j=1; j<4; j++){
+      switch (j){
+        case 1:
+          td.appendChild(document.createTextNode(events[i].start.date));
+          break;
+        case 2:
+          td.appendChild(document.createTextNode(events[i].venue.displayName));
+          break;
+        case 3:
+          td.appendChild(document.createTextNode(events[i].location.city));
+          break;
+      }
+    }
+  }
+  document.getElementById("TourDates").appendChild(table);
+}
 
 // album swiper for top albums
 $.getScript('https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js', function()
