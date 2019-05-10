@@ -14,7 +14,10 @@ if(isset($_POST['submit']))
     $params = array($fullname, $barname, $uname, $upassword, $email);
     $results = dataQuery($query, $params);
 
-    echo 1 == $results ? 'success' : 'failure';
+    if($results==1){
+        echo "<script>window.location = '../pages/register_success.html';
+        </script>";
+        }
 }
 
 ?>

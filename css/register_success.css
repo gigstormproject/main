@@ -1,0 +1,12 @@
+.bg-dark {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 30vh;
+}
+
+body{
+    background:url("../img/register_success.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
