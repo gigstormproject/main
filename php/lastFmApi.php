@@ -5,6 +5,7 @@
  
 $bandname = $_GET["bandname"];
 $method = $_GET["method"];
+$id = $_GET["id"];
 
 
 if($method == 1){
@@ -17,5 +18,16 @@ if($method ==2){
     $jsontopalbums = file_get_contents($jsonurl);
     echo $jsontopalbums;
 }
-    
+
+if($method ==3){
+    $jsonurl = "http://api.songkick.com/api/3.0/search/artists.json?apikey=RSDEntdIucTr1N21&query=".$bandname;
+    $jsontest = file_get_contents($jsonurl);
+    echo $jsontest; 
+}
+
+if($method ==4){
+    $jsonurl = "http://api.songkick.com/api/3.0/artists/".$id."/calendar.json?apikey=RSDEntdIucTr1N21";
+    $jsontest = file_get_contents($jsonurl);
+    echo $jsontest; 
+}
 ?>
