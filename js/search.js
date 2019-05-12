@@ -2,9 +2,10 @@ window.onload = loadContent();
 
 function loadContent(){
   bandname = localStorage.getItem("band");
-  getEvents();
+  
   getInfo();
   getAlbumInfo();
+  getEvents();
 }
 
 function getEvents(){
@@ -22,8 +23,6 @@ function getEvents(){
   })
   .then(function(data){
     var events = data. resultsPage.results.event;
-    var nextEvent = data.resultsPage.results.event[0].displayName;
-    // hier elemente platzieren
     createEventTable(events);
     
   })
@@ -69,27 +68,35 @@ function getAlbumInfo(albumurl){
 }
 
 function createEventTable(events){
-  
-  var table = document.createElement("table");
+  var eventsArray = events.map( event =>{
+    var eventObject = {date: event.start.date, venue: event.venue.displayName, location: event.location.city}
+    return eventObject;
+  })
+  let table = document.getElementById("TourDates");
+  let data = Object.keys(eventsArray[0]);
+  generateTableHead(table, data);
+  generateTable(table, eventsArray);
+}
 
-  for (var i=0; i<events.length; i++){
-    var tr = table.insertRow();
-    var td = tr.insertCell();
-    for(j=1; j<4; j++){
-      switch (j){
-        case 1:
-          td.appendChild(document.createTextNode(events[i].start.date));
-          break;
-        case 2:
-          td.appendChild(document.createTextNode(events[i].venue.displayName));
-          break;
-        case 3:
-          td.appendChild(document.createTextNode(events[i].location.city));
-          break;
-      }
+function generateTableHead(table, data) {
+  let thead = table.createTHead();
+  let row = thead.insertRow();
+  for (let key of data) {
+    let th = document.createElement("th");
+    let text = document.createTextNode(key);
+    th.appendChild(text);
+    row.appendChild(th);
+  }
+}
+function generateTable(table, data) {
+  for (let element of data) {
+    let row = table.insertRow();
+    for (key in element) {
+      let cell = row.insertCell();
+      let text = document.createTextNode(element[key]);
+      cell.appendChild(text);
     }
   }
-  document.getElementById("TourDates").appendChild(table);
 }
 
 // album swiper for top albums

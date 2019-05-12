@@ -154,19 +154,6 @@ p {
     padding-top: 100px;
 }
 
-#TourDates tbody{
-  background-color: transparent;
-}
-
-#TourDates tr {
-  background-color: transparent;
- 
-}
-
-#TourDates td {
-  padding: 15px;
-}
-
 .container{
 	flex-direction:row;
 	justify-content:center;
