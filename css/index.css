@@ -121,6 +121,7 @@
   background-color:black;
   color:white;
   border-color:white;
+  margin-top: -40%;
 }
 
 /* search bar */
@@ -554,4 +555,9 @@ form h2{
   color: white;
   background-color: gold;
   border-color: white;
+}
+
+.dropdown-menu {
+  background: none;
+  width: 7vw;
 }
