@@ -112,6 +112,34 @@
     color:white;
   }
 
+  #TourDates{
+    width: auto;
+    margin: auto;
+  }
+
+  #TourDates thead{
+    background:transparent !important;
+    border: none !important;
+    text-align: center !important;
+    margin: auto !important;
+   
+    color: white;
+  }
+
+  
+  #TourDates th{
+    text-align: center !important;
+    margin: auto !important;
+  }
+  
+  #TourDates td{
+    text-align: center !important;
+    margin: auto !important;
+    padding: 5px 20px;
+    font-family: "Raleway", sans-serif;
+    color: #6a6a6a;
+  }
+
 
 h1,
 h2,
@@ -152,6 +180,7 @@ p {
     overflow:hidden;
     padding: 50px;
     padding-top: 100px;
+  
 }
 
 .container{

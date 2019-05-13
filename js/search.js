@@ -58,6 +58,7 @@ function getAlbumInfo(albumurl){
       array.push(album.image[3]["#text"]);
       return array;
     })
+    // array.foreach?
     for(var i=0; i< 10; i++){
       url = "url(" + imageURLs[i] + ")";
       album = "topalbum" + (i+1);

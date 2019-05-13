@@ -1,6 +1,3 @@
-
-
-
 <?php
  
 $bandname = $_GET["bandname"];
