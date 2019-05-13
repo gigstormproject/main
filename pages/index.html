@@ -12,7 +12,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="../favicon.ico/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="../favicon.ico/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../favicon.ico/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="../favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../favicon.ico/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="../favicon.ico/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon.ico/favicon-16x16.png">
@@ -39,61 +39,63 @@
     <!-- Our general style sheet -->
     <link rel="stylesheet" href="../css/index.css">
     <!-- Font Awesome stylesheet for searchbar -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   </div>
 
   <!-- Navigation -->
   <div>
     <nav class="navbar-expand-lg navbar-dark fixed-top navbarbg " id="mainNav">
-        <div class="container">
-          <a href="#pubs" class="js-scroll-trigger"  data-heading="Gigstorm">
-            <div class="logo">
+      <div class="container">
+        <a href="#pubs" class="js-scroll-trigger" data-heading="Gigstorm">
+          <div class="logo">
             GigStorm
-            <span
-              class="glyphicon glyphicon-flash"></span>
+            <span class="glyphicon glyphicon-flash"></span>
           </div>
-            </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-    
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#pubs">
-                  <div class="logoSmall"> Pubs
-                  </div>
-                </a>
-    
-              </li>
-              <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#about">
-                  <div class="logoSmall"> About
-                  </div>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#bands">
-                  <div class="logoSmall"> Bands
-                  </div>
-                </a>
-              </li>
-            </ul>
-            <input id="bandInput" class="searchbar" type="text" placeholder="Search for a band..." autocomplete="off">
-            <a id="bandSearch" class="btn-search" onclick="goSearch()"><i class="fa fa-search" style=color:whitesmoke> </i></a>   
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <button class="btn btn-warning login-button">Login</button>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#pubs">
+                <div class="logoSmall"> Pubs
+                </div>
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a type="button" data-toggle="modal" data-target="#loginModal" id="login-button" href="#login" data-backdrop="false" class="modal-trigger dropdown-item" href="#">As a band</a>
-                <a type="button" data-toggle="modal" data-target="#loginModal2" id="login-button" href="#login2" data-backdrop="false" class="modal-trigger dropdown-item" href="#">As a venue</a>
-              </div>
+
             </li>
-          </div>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">
+                <div class="logoSmall"> About
+                </div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#bands">
+                <div class="logoSmall"> Bands
+                </div>
+              </a>
+            </li>
+          </ul>
+          <input id="bandInput" class="searchbar" type="text" placeholder="Search for a band..." autocomplete="off">
+          <a id="bandSearch" class="btn-search" onclick="goSearch()"><i class="fa fa-search" style=color:whitesmoke>
+            </i></a>
+          <li class="nav-item dropdown">
+            <a class="btn btn-warning login-button dropdown-toggle nav-link" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Login</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a type="button" data-toggle="modal" data-target="#loginModal" id="login-button" href="#login"
+                data-backdrop="false" class="modal-trigger dropdown-item" href="#">As a band</a>
+              <a type="button" data-toggle="modal" data-target="#loginModal2" id="login-button" href="#login2"
+                data-backdrop="false" class="modal-trigger dropdown-item" href="#">As a venue</a>
+            </div>
+          </li>
         </div>
-      </nav>
+      </div>
+    </nav>
   </div>
 </head>
 
@@ -101,15 +103,15 @@
   <!-----------------------------------MODAL BOX FOR logging in---------------------------------->
   <div>
     <div class="modal fade" id="loginModal" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header text-center">
-              <h4 class="modal-title w-100 font-weight-bold">Sign in as a band</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <form name="login" action="../php/login.php" method="post">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">Sign in as a band</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form name="login" action="../php/login.php" method="post">
             <div class="modal-body mx-3">
               <div class="md-form mb-5">
                 <i class="fas fa-envelope prefix grey-text"></i>
@@ -119,28 +121,28 @@
                 <i class="fas fa-lock prefix grey-text"></i>
                 <input name="upassword" type="password" placeholder="Password" class="form-control validate">
               </div>
-      
+
             </div>
             <div class="modal-footer d-flex justify-content-center">
-              <input name="submit" type="submit" placeholder="Submit"/>
+              <input name="submit" type="submit" placeholder="Submit" />
             </div>
           </form>
-          </div>
         </div>
       </div>
+    </div>
   </div>
 
   <div>
     <div class="modal fade" id="loginModal2" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header text-center">
-              <h4 class="modal-title w-100 font-weight-bold">Sign in as a venue</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <form name="login2" action="../php/login2.php" method="post">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">Sign in as a venue</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form name="login2" action="../php/login2.php" method="post">
             <div class="modal-body mx-3">
               <div class="md-form mb-5">
                 <i class="fas fa-envelope prefix grey-text"></i>
@@ -150,15 +152,15 @@
                 <i class="fas fa-lock prefix grey-text"></i>
                 <input name="upassword" type="password" placeholder="Password" class="form-control validate">
               </div>
-      
+
             </div>
             <div class="modal-footer d-flex justify-content-center">
-              <input name="submit" type="submit" placeholder="Submit"/>
+              <input name="submit" type="submit" placeholder="Submit" />
             </div>
           </form>
-          </div>
         </div>
       </div>
+    </div>
   </div>
 
   <section id="pubs" class="s1">
@@ -166,7 +168,8 @@
     <div class="light"></div>
     <h1 class="title">No decent bands to book?</h1>
     <h2 class="title-bottom">Find upcoming Talents with GigStorm!</h2>
-    <div class="button-container"><a href="register_pub.html"><button type="button" class="btn btn-dark register-button">Register as a pub</button></a></div>
+    <div class="button-container"><a href="register_pub.html"><button type="button"
+          class="btn btn-dark register-button">Register as a pub</button></a></div>
   </section>
 
   <section id="about" class="s2">
@@ -179,7 +182,8 @@
   <section id="bands" class="s3">
     <h1 class="title title-s3">Venues you book are basically garbage?</h1>
     <h2 class="title-bottom">Don't let your Talent go to waste!</h2>
-    <div class="button-container"><a href="register_band.html"><button type="button" class="btn btn-dark register-button">Register as a band</button></a></div>
+    <div class="button-container"><a href="register_band.html"><button type="button"
+          class="btn btn-dark register-button">Register as a band</button></a></div>
   </section>
 
   <!-- Footer -->
@@ -192,29 +196,29 @@
 
   <!--- Javascript stuff-->
   <div>
-  <!-- Bootstrap core JavaScript -->
-  <script src="../vendor/jquery/jquery.min.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Plugin JavaScript -->
-  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom JavaScript for this theme -->
-  <script src="../js/scrolling-nav.js"></script>
+    <!-- Custom JavaScript for this theme -->
+    <script src="../js/scrolling-nav.js"></script>
 
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script src="../js/index.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="../js/index.js"></script>
   </div>
 
 </body>
