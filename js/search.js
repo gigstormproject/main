@@ -18,7 +18,7 @@ function getEvents(){
     return response.json();
   })
   .then(function(data){
-    var id = data.resultsPage.results.artist[0].id;
+    let id = data.resultsPage.results.artist[0].id;
     return fetch('http://localhost:8081/php/lastFmApi.php?bandname=undefined&method=4&id=' + id);
   })
   .then(function(response){
@@ -27,7 +27,6 @@ function getEvents(){
   .then(function(data){
     var events = data.resultsPage.results.event;
     createEventTable(events);
-    
   })
   .catch(function(error){
     console.log("Request failed", error)
@@ -37,14 +36,33 @@ function getEvents(){
 function getPic(){
   console.log("test");
   var bandInfo = "http://localhost:8081/php/lastFmApi.php?bandname=" + bandname + "&method=5&id=0";
-  console.log(bandInfo);
   fetch(bandInfo)
   .then(function(response){
     return response.json();
   })
   .then(function(data){
     let bandpic = data.data[0].artist.picture_medium;
+    let id = data.data[0].artist.id;
     document.getElementById("bandpic").src = bandpic;
+    return fetch('http://localhost:8081/php/lastFmApi.php?bandname=undefined&method=6&id=' + id)
+  })
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(data){
+    
+    data.data.forEach(function(artist, i){
+      url = "url(" + artist.picture_big + ")";
+      relatedPic = "relatedPic" + (i+1);
+      relatedName = "relatedName" + (i+1);
+      deezerLink = "deezerLink" + (i+1);
+      deezerURL = artist.link;
+      document.getElementById(relatedPic).style.backgroundImage= url;
+      document.getElementById(relatedPic).style.backgroundSize = "100%";
+      document.getElementById(relatedName).innerHTML = artist.name;
+      document.getElementById(deezerLink).setAttribute('href', deezerURL);
+    })
+
   })
 }
 

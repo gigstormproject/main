@@ -138,8 +138,39 @@
     font-family: "Raleway", sans-serif;
     color: #6a6a6a;
   }
+  
+  .related{
+    box-sizing:border-box;
+    width: 90%;
+    height: 300px;
+    margin: auto;
+    margin-top: 3.5%;
+    
+  }
 
+  .img-container {
+    width: 16%;
+    height: 100%;
+    margin-left: 4.5%;
+    margin-right: 4.5%;
+    float: left;
+    color: white;
+  }
 
+  .img-container:hover{
+    opacity:0.6;
+  }
+
+  .imgText{
+    position: relative;
+    left: 0;
+    top: 50%;
+    width: auto;
+    text-align: center;
+    color: white;
+    background: black;
+    font-family: "Raleway", sans-serif;
+  }
 h1,
 h2,
 h3,
@@ -180,6 +211,19 @@ p {
     padding: 50px;
     padding-top: 100px;
   
+}
+
+.otherSections{
+  background: url('../img/dark-honeycomb.png');
+  background-attachment: fixed;
+  background-repeat: auto;
+  background-size: 400px 400px;
+  text-align: center;
+  color: white;
+  overflow:hidden;
+  padding: 10px;
+  padding-top: 30px;
+
 }
 
 .container{

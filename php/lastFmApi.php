@@ -35,7 +35,7 @@ if($method ==5){
 }
 
 if($method ==6){
-    $jsonurl="http://api.deezer.com/artist/".$id;
+    $jsonurl="http://api.deezer.com/artist/".$id."/related";
     $jsonband = file_get_contents($jsonurl);
     echo $jsonband;
 }
