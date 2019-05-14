@@ -27,4 +27,16 @@ if($method ==4){
     $jsontest = file_get_contents($jsonurl);
     echo $jsontest; 
 }
+
+if($method ==5){
+    $jsonurl = "http://api.deezer.com/search?q=artist:'".$bandname."'";
+    $jsonband = file_get_contents($jsonurl);
+    echo $jsonband;
+}
+
+if($method ==6){
+    $jsonurl="http://api.deezer.com/artist/".$id;
+    $jsonband = file_get_contents($jsonurl);
+    echo $jsonband;
+}
 ?>

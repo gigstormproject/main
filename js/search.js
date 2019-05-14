@@ -5,7 +5,10 @@ function loadContent(){
   
   getInfo();
   getAlbumInfo();
+
   getEvents();
+  getPic();
+
 }
 
 function getEvents(){
@@ -22,7 +25,7 @@ function getEvents(){
     return response.json();
   })
   .then(function(data){
-    var events = data. resultsPage.results.event;
+    var events = data.resultsPage.results.event;
     createEventTable(events);
     
   })
@@ -31,17 +34,32 @@ function getEvents(){
   })
 }
 
+function getPic(){
+  console.log("test");
+  var bandInfo = "http://localhost:8081/php/lastFmApi.php?bandname=" + bandname + "&method=5&id=0";
+  console.log(bandInfo);
+  fetch(bandInfo)
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(data){
+    let bandpic = data.data[0].artist.picture_medium;
+    document.getElementById("bandpic").src = bandpic;
+  })
+}
+
+
 function getInfo(bandurl){
   var bandurl = "http://localhost:8081/php/lastFmApi.php?bandname=" + bandname + "&method=1&id=0";
   $.getJSON(bandurl, function(data) {
     let name = data.artist.name;
-    let pic = data.artist.image[3]["#text"];
+    //let pic = data.artist.image[3]["#text"];
     let bio = data.artist.bio.summary;
     //let tags = data.artist.tags.tag[0].name;
     let ontour = data.artist.ontour =="0" ? false : true;
     document.getElementById("title").innerHTML = "GigStorm: " + name;
     document.getElementById("bandname").innerHTML = name;
-    document.getElementById("bandpic").src = pic;
+    //document.getElementById("bandpic").src = pic;
     document.getElementById("bandbio").innerHTML = bio;
     //document.getElementById("tags").innerHTML = tags;
     document.getElementById("ontour").innerHTML = ontour ? "On Tour" : "Not On Tour";
@@ -58,7 +76,7 @@ function getAlbumInfo(albumurl){
       array.push(album.image[3]["#text"]);
       return array;
     })
-    // array.foreach?
+    // array.for each?
     for(var i=0; i< 10; i++){
       url = "url(" + imageURLs[i] + ")";
       album = "topalbum" + (i+1);
