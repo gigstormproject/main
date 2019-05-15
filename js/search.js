@@ -2,13 +2,10 @@ window.onload = loadContent();
 
 function loadContent(){
   bandname = localStorage.getItem("band");
-  
   getInfo();
   getAlbumInfo();
-
   getEvents();
-  getPic();
-
+  deezerStuff();
 }
 
 function getEvents(){
@@ -33,7 +30,7 @@ function getEvents(){
   })
 }
 
-function getPic(){
+function deezerStuff(){
   console.log("test");
   var bandInfo = "http://localhost:8081/php/lastFmApi.php?bandname=" + bandname + "&method=5&id=0";
   fetch(bandInfo)
@@ -50,7 +47,6 @@ function getPic(){
     return response.json();
   })
   .then(function(data){
-    
     data.data.forEach(function(artist, i){
       url = "url(" + artist.picture_big + ")";
       relatedPic = "relatedPic" + (i+1);
@@ -62,22 +58,18 @@ function getPic(){
       document.getElementById(relatedName).innerHTML = artist.name;
       document.getElementById(deezerLink).setAttribute('href', deezerURL);
     })
-
   })
 }
-
 
 function getInfo(bandurl){
   var bandurl = "http://localhost:8081/php/lastFmApi.php?bandname=" + bandname + "&method=1&id=0";
   $.getJSON(bandurl, function(data) {
     let name = data.artist.name;
-    //let pic = data.artist.image[3]["#text"];
     let bio = data.artist.bio.summary;
     //let tags = data.artist.tags.tag[0].name;
     let ontour = data.artist.ontour =="0" ? false : true;
     document.getElementById("title").innerHTML = "GigStorm: " + name;
     document.getElementById("bandname").innerHTML = name;
-    //document.getElementById("bandpic").src = pic;
     document.getElementById("bandbio").innerHTML = bio;
     //document.getElementById("tags").innerHTML = tags;
     document.getElementById("ontour").innerHTML = ontour ? "On Tour" : "Not On Tour";
@@ -114,7 +106,6 @@ function createEventTable(events){
   generateTableHead(table, data);
   generateTable(table, eventsArray);
 }
-
 function generateTableHead(table, data) {
   let thead = table.createTHead();
   let row = thead.insertRow();
