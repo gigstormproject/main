@@ -31,15 +31,17 @@ function getEvents(){
 }
 
 function deezerStuff(){
-  console.log("test");
+  console.log(bandname);
   var bandInfo = "http://localhost:8081/php/lastFmApi.php?bandname=" + bandname + "&method=5&id=0";
+  console.log(bandInfo);
   fetch(bandInfo)
   .then(function(response){
     return response.json();
   })
   .then(function(data){
-    let bandpic = data.data[0].artist.picture_medium;
-    let id = data.data[0].artist.id;
+    let bandpic = data.data[0].picture_medium;
+    console.log(bandpic);
+    let id = data.data[0].id;
     document.getElementById("bandpic").src = bandpic;
     return fetch('http://localhost:8081/php/lastFmApi.php?bandname=undefined&method=6&id=' + id)
   })

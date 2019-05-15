@@ -6,19 +6,21 @@ $id = $_GET["id"];
 
 
 if($method == 1){
-    $jsonurlband = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=".$bandname."&api_key=ea0a169d4f3342854c812231aeb01315&format=json";
-    $jsonband = file_get_contents($jsonurlband);
+    $jsonurlband = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=";
+    $urlpart2 = "&api_key=ea0a169d4f3342854c812231aeb01315&format=json";
+    $jsonband = file_get_contents($jsonurlband .urlencode($bandname). $urlpart2);
     echo $jsonband;
 }
 if($method ==2){
-    $jsonurl = "http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=".$bandname."&api_key=ea0a169d4f3342854c812231aeb01315&format=json";
-    $jsontopalbums = file_get_contents($jsonurl);
+    $jsonurl = "http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=";
+    $urlpart2 = "&api_key=ea0a169d4f3342854c812231aeb01315&format=json";
+    $jsontopalbums = file_get_contents($jsonurl . urlencode($bandname). $urlpart2);
     echo $jsontopalbums;
 }
 
 if($method ==3){
-    $jsonurl = "http://api.songkick.com/api/3.0/search/artists.json?apikey=RSDEntdIucTr1N21&query=".$bandname;
-    $jsontest = file_get_contents($jsonurl);
+    $jsonurl = "http://api.songkick.com/api/3.0/search/artists.json?apikey=RSDEntdIucTr1N21&query=";
+    $jsontest = file_get_contents($jsonurl. urlencode($bandname));
     echo $jsontest; 
 }
 
@@ -29,8 +31,8 @@ if($method ==4){
 }
 
 if($method ==5){
-    $jsonurl = "http://api.deezer.com/search?q=artist:'".$bandname."'";
-    $jsonband = file_get_contents($jsonurl);
+    $jsonurl = "http://api.deezer.com/search/artist?q=";
+    $jsonband = file_get_contents($jsonurl . urlencode($bandname));
     echo $jsonband;
 }
 
