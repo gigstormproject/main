@@ -42,7 +42,8 @@ function goSearchPub() {
 }
 
 var inputBand = document.getElementById("bandInput");
-input.addEventListener("keyup", function(event) {
+console.log(inputBand);
+inputBand.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
    event.preventDefault();
    document.getElementById("bandSearch").click();
@@ -51,7 +52,7 @@ input.addEventListener("keyup", function(event) {
 
 
 var inputPub = document.getElementById("pubInput");
-input.addEventListener("keyup", function(event) {
+inputPub.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
    event.preventDefault();
    document.getElementById("pubSearch").click();
