@@ -31,8 +31,7 @@ function goSearchBand() {
   
 }
 
-function goSearchpub() {
-  
+function goSearchPub() {
   if (typeof Storage !== "undefined") {
     localStorage.setItem("pub", document.getElementById("pubInput").value);
     window.location.href="../pages/pub_search.html";
@@ -42,14 +41,20 @@ function goSearchpub() {
   
 }
 
-
-
-
-var input = document.getElementById("bandInput");
+var inputBand = document.getElementById("bandInput");
 input.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
    event.preventDefault();
    document.getElementById("bandSearch").click();
+  }
+});
+
+
+var inputPub = document.getElementById("pubInput");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("pubSearch").click();
   }
 });
 

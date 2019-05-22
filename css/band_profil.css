@@ -225,7 +225,7 @@ p {
   margin-bottom: 100px !important;
 }
 
-.about{
+.about {
     background: url('../img/memphis-mini-dark.png');
     background-attachment: fixed;
     background-repeat: auto;
@@ -236,7 +236,19 @@ p {
     padding: 50px;
     padding-top: 100px;
     padding-bottom:100px;
-  
+}
+
+.aboutPub{
+  background: url('../img/memphis-mini-dark.png');
+  background-attachment: fixed;
+  background-repeat: auto;
+  background-size: 300px 300px;
+  text-align: center;
+  color: white;
+  overflow:hidden;
+  padding: 50px;
+  padding-top: 100px;
+  padding-bottom:20px;
 }
 
 .otherSections{

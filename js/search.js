@@ -38,7 +38,6 @@ function getDeezerData(){
   })
   .then(function(data){
     let bandpic = data.data[0].picture_medium;
-    console.log(bandpic);
     let id = data.data[0].id;
     document.getElementById("bandpic").src = bandpic;
     return fetch('http://localhost:8081/php/lastFmApi.php?searchterm=undefined&method=6&id=' + id)
