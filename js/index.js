@@ -20,7 +20,7 @@ span.onclick = function() {
 
 // search bar function - stores Input in Web Storage
 
-function goSearch() {
+function goSearchBand() {
   
   if (typeof Storage !== "undefined") {
     localStorage.setItem("band", document.getElementById("bandInput").value);
@@ -30,6 +30,19 @@ function goSearch() {
   }
   
 }
+
+function goSearchpub() {
+  
+  if (typeof Storage !== "undefined") {
+    localStorage.setItem("pub", document.getElementById("pubInput").value);
+    window.location.href="../pages/pub_search.html";
+  } else {
+    alert("Storage not activated");
+  }
+  
+}
+
+
 
 
 var input = document.getElementById("bandInput");

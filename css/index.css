@@ -182,6 +182,54 @@ body{
   margin-right: 40px;
 }
 
+.searchbarPub {
+  background-color: smokewhite;
+  color: black;
+  padding: 6px 10px;
+  width: 120px;
+  border: none;
+  margin-top: 1px;
+  margin-right: 8px;
+  font-size: 1em;
+
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom: white solid 2px;
+  transition: 0.3s;
+}
+
+.searchbarPub::placeholder {
+  color: black;
+  font-size: 1em;
+  font-weight: bold;
+  /* transition: 0.2s; */
+}
+
+.searchbarPub:focus {
+  width: 200px;
+  font-size: 1em;
+  transition: 0.3s;
+  /* Stops the input box from inheriting the styling from the inputs on the request form */
+  border-bottom: white solid 2px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  outline: none;
+}
+
+.btn-search-pub {
+  cursor: pointer;
+  color: white;
+  text-decoration: none !important;
+  font-family: "Segoe UI Light","Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif;
+  font-size: 1.5em;
+  padding-top: 5px;
+  margin-right: 40px;
+}
+
+
 /*------------------------LOGINPOPUP-----------------------------*/
 
 .modal {

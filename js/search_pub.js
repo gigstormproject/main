@@ -1,22 +1,22 @@
 window.onload = loadContent();
 
 function loadContent(){
-  bandname = localStorage.getItem("band");
-  getLastFMData();
-  getAlbumInfo();
-  getSongKickEvents();
-  getDeezerData();
+  pubName = localStorage.getItem("pub");
+  //getLastFMData();
+ // getAlbumInfo();
+  getSongKickInfo();
+  //getDeezerData();
 }
 
-function getSongKickEvents(){
-  var urlBandId = "http://localhost:8081/php/lastFmApi.php?searchterm=" + bandname + "&method=3&id=0";
-  fetch(urlBandId)
+function getSongKickInfo(){
+  var urlPubId = "http://localhost:8081/php/lastFmApi.php?searchterm=" + pubName + "&method=7&id=0";
+  fetch(urlPubId)
   .then(function(response){
     return response.json();
   })
   .then(function(data){
-    let id = data.resultsPage.results.artist[0].id;
-    return fetch('http://localhost:8081/php/lastFmApi.php?searchterm=undefined&method=4&id=' + id);
+    let id = data.resultsPage.results.venue[0].id;
+    return fetch('http://localhost:8081/php/lastFmApi.php?searchterm=undefined&method=8&id=' + id);
   })
   .then(function(response){
     return response.json();
@@ -61,40 +61,6 @@ function getDeezerData(){
   })
 }
 
-function getLastFMData(bandurl){
-  var bandurl = "http://localhost:8081/php/lastFmApi.php?searchterm=" + bandname + "&method=1&id=0";
-  $.getJSON(bandurl, function(data) {
-    let name = data.artist.name;
-    let bio = data.artist.bio.summary;
-    //let tags = data.artist.tags.tag[0].name;
-    let ontour = data.artist.ontour =="0" ? false : true;
-    document.getElementById("title").innerHTML = "GigStorm: " + name;
-    document.getElementById("bandname").innerHTML = name;
-    document.getElementById("bandbio").innerHTML = bio;
-    //document.getElementById("tags").innerHTML = tags;
-    document.getElementById("ontour").innerHTML = ontour ? "On Tour" : "Not On Tour";
-    document.getElementById("ontour").style.backgroundColor = ontour ? "green" : "red";
-    //let related1 = data.artist.similar.artist[0].name; related page stub
-  });
-}
-
-function getAlbumInfo(albumurl){
-  var albumurl = "http://localhost:8081/php/lastFmApi.php?searchterm=" + bandname + "&method=2&id=0";
-  $.getJSON(albumurl, function(data) {
-    var imageURLs = data.topalbums.album.map(album =>{
-      array =[];
-      array.push(album.image[3]["#text"]);
-      return array;
-    })
-    // array.for each?
-    for(var i=0; i< 10; i++){
-      url = "url(" + imageURLs[i] + ")";
-      album = "topalbum" + (i+1);
-      document.getElementById(album).style.backgroundImage = url;
-      document.getElementById(album).style.backgroundSize = "100%";
-    }
-  });   
-}
 
 function createEventTable(events){
   var eventsArray = events.map( event =>{
