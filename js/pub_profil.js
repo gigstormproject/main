@@ -2,16 +2,14 @@ window.onload = loadContent();
 
 function loadContent(){
   pubName = getCookie("pub");
-  getSongKickInfo();
-}
-
-function getSongKickInfo(){
   var urlPubId = "http://localhost:8081/php/lastFmApi.php?searchterm=" + pubName + "&method=7&id=0";
+
   fetch(urlPubId)
   .then(function(response){
     return response.json();
   })
   .then(function(data){
+    document.getElementById("loadingBar").style.width = "25%";
     let id = data.resultsPage.results.venue[0].id;
     var name = data.resultsPage.results.venue[0].displayName;
     var website = data.resultsPage.results.venue[0].website;
@@ -31,6 +29,7 @@ function getSongKickInfo(){
     return response.json();
   })
   .then(function(data){
+    document.getElementById("loadingBar").style.width = "45%";
     var events = data.resultsPage.results.event;
     createEventTable(events);
   })
@@ -39,15 +38,17 @@ function getSongKickInfo(){
     return response.json();
   })
   .then(function(data){
+ 
     let lat = data.resultsPage.results.venue[0].lat;
     let lng = data.resultsPage.results.venue[0].lng ;
+    document.getElementById("loadingBar").style.width = "65%";
     return fetch('http://localhost:8081/php/geoData.php?method=1&lat='+ lat + "&lng=" + lng + "&id=undefined");
   })
   .then(function(response){
     return response.json();
   })
   .then(function(data){
-   
+    document.getElementById("loadingBar").style.width = "85%";
     let id = data.response.venues[0].id;
     return fetch('http://localhost:8081/php/geoData.php?method=2&lat=undefined&lng=undefined&id=' + id);
   })
@@ -55,17 +56,25 @@ function getSongKickInfo(){
     return response.json();
   })
   .then(function(data){
-    console.log(data);
+    document.getElementById("loadingBar").style.width = "100%";
     pubPicUrl1 = data.response.venue.bestPhoto.prefix;
     size = "250x250";
     pubPicUrl2 = data.response.venue.bestPhoto.suffix;
     pubPicUrlFinal = pubPicUrl1 + size + pubPicUrl2;
     document.getElementById("pubPic").src = pubPicUrlFinal;
+    document.getElementById("loadingContainer").style.animation = "disappear 1s ease-out both";
+    var test = document.getElementsByClassName("invisible");
+    console.log(test);
+    Array.from(test).forEach((el) => {
+      el.className = "visible";
+      el.style.animation = "appear 1s ease-in both";
+    });
 
-    tag1 = data.response.venue.categories[0].name;
-    tag2 = data.response.venue.categories[1].name;
-    tags = tag1 + " // " + tag2;
-    document.getElementById("tags").innerHTML = tags;
+
+    //tag1 = data.response.venue.categories[0].name;
+    //tag2 = data.response.venue.categories[1].name;
+    //tags = tag1 + " // " + tag2;
+    //document.getElementById("tags").innerHTML = tags;
 
   })
   .catch(function(error){
