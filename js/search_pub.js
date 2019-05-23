@@ -38,7 +38,6 @@ function loadContent(){
     return response.json();
   })
   .then(function(data){
- 
     let lat = data.resultsPage.results.venue[0].lat;
     let lng = data.resultsPage.results.venue[0].lng ;
     document.getElementById("loadingBar").style.width = "65%";
@@ -62,10 +61,9 @@ function loadContent(){
     pubPicUrl2 = data.response.venue.bestPhoto.suffix;
     pubPicUrlFinal = pubPicUrl1 + size + pubPicUrl2;
     document.getElementById("pubPic").src = pubPicUrlFinal;
-    document.getElementById("loadingContainers").style.animation = "disappear 1s ease-out both";
-    var test = document.getElementsByClassName("invisible");
-    console.log(test);
-    Array.from(test).forEach((el) => {
+    document.getElementById("loadingContainer").style.animation = "disappear 1s ease-out both";
+    var invisibleStuff = document.getElementsByClassName("invisible");
+    Array.from(invisibleStuff).forEach((el) => {
       el.className = "visible";
       el.style.animation = "appear 1s ease-in both";
     });

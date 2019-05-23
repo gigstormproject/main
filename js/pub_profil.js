@@ -78,7 +78,7 @@ function loadContent(){
 
   })
   .catch(function(error){
-    console.log("Request failed", error)
+    return;
   })
 }
 
