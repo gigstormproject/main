@@ -38,6 +38,9 @@
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- scrolling navbar -->
     <link href="../css/scrolling-nav.css" rel="stylesheet">
+      <!-- for the album swiper -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.css"></link>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.css"></link> 
     <!-- Our general style sheet -->
     <link rel="stylesheet" href="../css/band_profil.css">
    
@@ -58,6 +61,10 @@
             aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+
+          <input id="bandInput" class="searchbarPub" type="text" placeholder="Search for a band..." autocomplete="off">
+          <a id="bandSearch" class="btn-search-pub" onclick="goSearchBand()"><i class="fa fa-search" style=color:whitesmoke>
+            </i></a>
     
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
@@ -81,6 +88,8 @@
                 </a>
               </li>
             </ul>
+            <a class="btn btn-warning login-button nav-link" href="index.html" id="navbarDropdown" role="button"
+               aria-haspopup="true" aria-expanded="true">Logout</a>
           </div>
         </div>
       </nav>
@@ -239,8 +248,6 @@
   <script src="../js/search.js" type="text/javascript"></script> 
   <!-- for the album swiper -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.css"></link>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.css"></link> 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -253,7 +260,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-
+    <script src="../js/band_profil.js" type="text/javascript"></script> 
   </div>
 
   

@@ -617,3 +617,27 @@ form h2{
   background: none;
   width: 7vw;
 }
+
+div#navbarResponsive {
+  margin-left: 8%;
+}
+
+.second_hide {
+  display: block;
+  width: 100px;
+  margin-left: 45%;
+}
+
+.s1_title{
+  padding-top:20vh;
+}
+
+.s2_title{
+  padding-top:10vh !important;
+}
+
+.title-s3{
+  padding-top:20vh !important;
+}
+
+}

@@ -193,6 +193,80 @@ $.getScript('https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.j
   });
 });
 
+function goSearchBand() {
+  
+
+  if (document.getElementById("bandInput").value != ""){
+    if (typeof Storage !== "undefined") {
+      localStorage.setItem("band", document.getElementById("bandInput").value);
+      window.location.href="../pages/band_search.html";
+    } else {
+      alert("Storage not activated");
+    }
+    
+  }
+  else {
+    
+  }
+}
+
+function goSearchPub() {
+  if(document.getElementById("pubInput").value != ""){
+    if (typeof Storage !== "undefined") {
+      localStorage.setItem("pub", document.getElementById("pubInput").value);
+      window.location.href="../pages/pub_search.html";
+    } else {
+      alert("Storage not activated");
+    }
+  }
+    else {
+    
+    }
+}
+
+var inputBand = document.getElementById("bandInput");
+console.log(inputBand);
+inputBand.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("bandSearch").click();
+  }
+});
+
+
+var inputPub = document.getElementById("pubInput");
+inputPub.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("pubSearch").click();
+  }
+});
+
+(function() {
+  var isBootstrapEvent = false;
+  if (window.jQuery) {
+      var all = jQuery('*');
+      jQuery.each(['hide.bs.dropdown', 
+          'hide.bs.collapse', 
+          'hide.bs.modal', 
+          'hide.bs.tooltip',
+          'hide.bs.popover'], function(index, eventName) {
+          all.on(eventName, function( event ) {
+              isBootstrapEvent = true;
+          });
+      });
+  }
+  var originalHide = Element.hide;
+  Element.addMethods({
+      hide: function(element) {
+          if(isBootstrapEvent) {
+              isBootstrapEvent = false;
+              return element;
+          }
+          return originalHide(element);
+      }
+  });
+})();
 
 
     
