@@ -2,7 +2,6 @@ window.onload = loadContent();
 
 function loadContent(){
   pubName = getCookie("pub");
-  console.log(pubName);
   getSongKickInfo();
 }
 

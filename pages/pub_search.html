@@ -88,44 +88,51 @@
 </head>
 
 <body id="page-top">
+
     <div style="position:fixed; top:35%">
       <i class="fab fa-twitter-square" style="font-size:80px;color:#2196F3"></i><br>
       <i class="fab fa-youtube-square" style="font-size:80px;color:#ff0000"></i><br>
     </div>
 
   <section id="about" class="aboutPub">
-  
-    <div class="row">
-        <!-- About Thumbnail -->
-        <div class="col-12 col-lg-6">
-            <div class="about-thumbnail mb-100">
-                <img id="pubPic" src="" alt="Couldnt Find Picture of Pub" style="height:250px; width:250px"><br>
-            </div>
-           
-        </div>
-        <!-- About Content -->
-        <div class="col-12 col-lg-6 section-heading">
-            <div class="about-content mb-100">
-                
-                <h2 id="pubName"> Couldnt Find Info about Pub</h2>
-                <p id="website"> Couldnt Find Info about Pub</p>
-                <p id="location"> </p>
-                <p id="tags"> </p>
-        
-            </div>
-        </div>
-        
-    </div>
+    <div class="progress" id="loadingContainer">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%" id="loadingBar"></div>
+  </div>
 
+    <div class = "invisible">
+      <div class="row">
+          <!-- About Thumbnail -->
+          <div class="col-12 col-lg-6">
+              <div class="about-thumbnail mb-100">
+                  <img id="pubPic" src="" alt="Couldnt Find Picture of Pub" style="height:250px; width:250px"><br>
+              </div>
+            
+          </div>
+          <!-- About Content -->
+          <div class="col-12 col-lg-6 section-heading">
+              <div class="about-content mb-100">
+                  
+                  <h2 id="pubName"> Couldnt Find Info about Pub</h2>
+                  <p id="website"> Couldnt Find Info about Pub</p>
+                  <p id="location"> </p>
+                  <p id="tags"> </p>
+          
+              </div>
+          </div>
+          
+      </div>
+  </div>
   
   </section>
 
   <section id="Shows" class="otherSections">
+    <div class = "invisible"> 
     <a href="https://www.songkick.com/">
     <img src="../img/powered-by-songkick-pink.png" alt="Powered by Songkick" style=" width: 10%"> <br>
     </a>
     <table id="TourDates" style="background:transparent">
     </table>
+  </div>
   </section>
 
   <section class="otherSections" id="Similiar">
