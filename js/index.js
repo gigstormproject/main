@@ -22,34 +22,50 @@ span.onclick = function() {
 
 function goSearchBand() {
   
-  if (typeof Storage !== "undefined") {
-    localStorage.setItem("band", document.getElementById("bandInput").value);
-    window.location.href="../pages/band_search.html";
-  } else {
-    alert("Storage not activated");
+
+  if (document.getElementById("bandInput").value != ""){
+    if (typeof Storage !== "undefined") {
+      localStorage.setItem("band", document.getElementById("bandInput").value);
+      window.location.href="../pages/band_search.html";
+    } else {
+      alert("Storage not activated");
+    }
+    
   }
-  
+  else {
+    
+  }
 }
 
-function goSearchpub() {
-  
-  if (typeof Storage !== "undefined") {
-    localStorage.setItem("pub", document.getElementById("pubInput").value);
-    window.location.href="../pages/pub_search.html";
-  } else {
-    alert("Storage not activated");
+function goSearchPub() {
+  if(document.getElementById("pubInput").value != ""){
+    if (typeof Storage !== "undefined") {
+      localStorage.setItem("pub", document.getElementById("pubInput").value);
+      window.location.href="../pages/pub_search.html";
+    } else {
+      alert("Storage not activated");
+    }
   }
-  
+    else {
+    
+    }
 }
 
-
-
-
-var input = document.getElementById("bandInput");
-input.addEventListener("keyup", function(event) {
+var inputBand = document.getElementById("bandInput");
+console.log(inputBand);
+inputBand.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
    event.preventDefault();
    document.getElementById("bandSearch").click();
+  }
+});
+
+
+var inputPub = document.getElementById("pubInput");
+inputPub.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("pubSearch").click();
   }
 });
 

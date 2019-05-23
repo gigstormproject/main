@@ -1,7 +1,7 @@
 window.onload = loadContent();
 
 function loadContent(){
-  pubName = localStorage.getItem("pub");
+  pubName = getCookie("pub");
   var urlPubId = "http://localhost:8081/php/lastFmApi.php?searchterm=" + pubName + "&method=7&id=0";
 
   fetch(urlPubId)
@@ -38,6 +38,7 @@ function loadContent(){
     return response.json();
   })
   .then(function(data){
+ 
     let lat = data.resultsPage.results.venue[0].lat;
     let lng = data.resultsPage.results.venue[0].lng ;
     document.getElementById("loadingBar").style.width = "65%";
@@ -62,8 +63,9 @@ function loadContent(){
     pubPicUrlFinal = pubPicUrl1 + size + pubPicUrl2;
     document.getElementById("pubPic").src = pubPicUrlFinal;
     document.getElementById("loadingContainer").style.animation = "disappear 1s ease-out both";
-    var invisibleStuff = document.getElementsByClassName("invisible");
-    Array.from(invisibleStuff).forEach((el) => {
+    var test = document.getElementsByClassName("invisible");
+    console.log(test);
+    Array.from(test).forEach((el) => {
       el.className = "visible";
       el.style.animation = "appear 1s ease-in both";
     });
@@ -76,7 +78,7 @@ function loadContent(){
 
   })
   .catch(function(error){
-    console.log("Request failed", error)
+    return;
   })
 }
 
@@ -113,7 +115,21 @@ function generateTable(table, data) {
   }
 }
 
-
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
 
 // album swiper for top albums
 $.getScript('https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js', function()

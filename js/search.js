@@ -2,19 +2,13 @@ window.onload = loadContent();
 
 function loadContent(){
   bandname = localStorage.getItem("band");
-  getLastFMData();
-  getAlbumInfo();
-  getSongKickEvents();
-  getDeezerData();
-}
-
-function getSongKickEvents(){
   var urlBandId = "http://localhost:8081/php/lastFmApi.php?searchterm=" + bandname + "&method=3&id=0";
   fetch(urlBandId)
   .then(function(response){
     return response.json();
   })
   .then(function(data){
+    document.getElementById("loadingBar").style.width = "20%";
     let id = data.resultsPage.results.artist[0].id;
     return fetch('http://localhost:8081/php/lastFmApi.php?searchterm=undefined&method=4&id=' + id);
   })
@@ -22,23 +16,23 @@ function getSongKickEvents(){
     return response.json();
   })
   .then(function(data){
+    document.getElementById("loadingBar").style.width = "30%";
     var events = data.resultsPage.results.event;
     createEventTable(events);
   })
   .catch(function(error){
-    console.log("Request failed", error)
+    return;
   })
-}
-
-function getDeezerData(){
-  var bandInfo = "http://localhost:8081/php/lastFmApi.php?searchterm=" + bandname + "&method=5&id=0";
-  fetch(bandInfo)
+  .then(() => {
+    var bandInfo = "http://localhost:8081/php/lastFmApi.php?searchterm=" + bandname + "&method=5&id=0";
+    return fetch(bandInfo);
+  })
   .then(function(response){
     return response.json();
   })
   .then(function(data){
+    document.getElementById("loadingBar").style.width = "40%";
     let bandpic = data.data[0].picture_medium;
-    console.log(bandpic);
     let id = data.data[0].id;
     document.getElementById("bandpic").src = bandpic;
     return fetch('http://localhost:8081/php/lastFmApi.php?searchterm=undefined&method=6&id=' + id)
@@ -47,6 +41,7 @@ function getDeezerData(){
     return response.json();
   })
   .then(function(data){
+    document.getElementById("loadingBar").style.width = "50%";
     data.data.forEach(function(artist, i){
       url = "url(" + artist.picture_big + ")";
       relatedPic = "relatedPic" + (i+1);
@@ -59,11 +54,19 @@ function getDeezerData(){
       document.getElementById(deezerLink).setAttribute('href', deezerURL);
     })
   })
-}
-
-function getLastFMData(bandurl){
-  var bandurl = "http://localhost:8081/php/lastFmApi.php?searchterm=" + bandname + "&method=1&id=0";
-  $.getJSON(bandurl, function(data) {
+  .catch(function(error){
+    return;
+  })
+  .then(() => {
+    document.getElementById("loadingBar").style.width = "60%";
+    var bandurl = "http://localhost:8081/php/lastFmApi.php?searchterm=" + bandname + "&method=1&id=0";
+    return fetch(bandurl);
+  })
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(data){
+    document.getElementById("loadingBar").style.width = "70%";
     let name = data.artist.name;
     let bio = data.artist.bio.summary;
     //let tags = data.artist.tags.tag[0].name;
@@ -74,13 +77,21 @@ function getLastFMData(bandurl){
     //document.getElementById("tags").innerHTML = tags;
     document.getElementById("ontour").innerHTML = ontour ? "On Tour" : "Not On Tour";
     document.getElementById("ontour").style.backgroundColor = ontour ? "green" : "red";
+    document.getElementById("ontour").style.animation = "swing-in 1s linear both";
     //let related1 = data.artist.similar.artist[0].name; related page stub
-  });
-}
-
-function getAlbumInfo(albumurl){
-  var albumurl = "http://localhost:8081/php/lastFmApi.php?searchterm=" + bandname + "&method=2&id=0";
-  $.getJSON(albumurl, function(data) {
+  })
+  .catch(function(error){
+    return;
+  })
+  .then(() => {
+    var albumurl = "http://localhost:8081/php/lastFmApi.php?searchterm=" + bandname + "&method=2&id=0";
+    return fetch(albumurl);
+  })
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(data){
+    document.getElementById("loadingBar").style.width = "90%";
     var imageURLs = data.topalbums.album.map(album =>{
       array =[];
       array.push(album.image[3]["#text"]);
@@ -93,7 +104,18 @@ function getAlbumInfo(albumurl){
       document.getElementById(album).style.backgroundImage = url;
       document.getElementById(album).style.backgroundSize = "100%";
     }
-  });   
+  })
+  .then(() =>{
+    document.getElementById("loadingContainer").style.animation = "disappear 1s ease-out both";
+    var invisibleStuff = document.getElementsByClassName("invisible");
+    Array.from(invisibleStuff).forEach((el) => {
+      el.className = "visible";
+      el.style.animation = "appear 1s ease-in both";
+    });
+  })
+  .catch(function(error){
+    console.log("Request failed", error)
+  })
 }
 
 function createEventTable(events){

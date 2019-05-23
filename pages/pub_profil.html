@@ -79,14 +79,8 @@
 
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#Tour">
-                <div class="logoSmall"> TourDates
-                </div>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#Similiar">
-                <div class="logoSmall"> Similiar
+              <a class="nav-link js-scroll-trigger" href="#Shows">
+                <div class="logoSmall"> Shows
                 </div>
               </a>
             </li>
@@ -100,26 +94,24 @@
 </head>
 
 <body id="page-top">
+
   <div style="position:fixed; top:35%">
     <i class="fab fa-twitter-square" style="font-size:80px;color:#2196F3"></i><br>
     <i class="fab fa-youtube-square" style="font-size:80px;color:#ff0000"></i><br>
   </div>
 
-  <section id="about" class="about">
-
-    <div>
-      <div class="progress" id="loadingContainer">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0"
-          aria-valuemin="0" aria-valuemax="100" style="width: 0%" id="loadingBar"></div>
-      </div>
-      <h1 class="logo"></h1>
+  <section id="about" class="aboutPub">
+    <div class="progress" id="loadingContainer">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0"
+        aria-valuemin="0" aria-valuemax="100" style="width: 0%" id="loadingBar"></div>
     </div>
+
     <div class="invisible">
       <div class="row">
         <!-- About Thumbnail -->
         <div class="col-12 col-lg-6">
           <div class="about-thumbnail mb-100">
-            <img id="bandpic" src="" alt="Hier bandpic"><br>
+            <img id="pubPic" src="" alt="Couldnt Find Picture of Pub" style="height:250px; width:250px"><br>
           </div>
 
         </div>
@@ -127,37 +119,20 @@
         <div class="col-12 col-lg-6 section-heading">
           <div class="about-content mb-100">
 
-            <h2 id="bandname"> Artist Name</h2>
-            <span class="label" id="ontour" style=background-color:red>Not On-Tour</span>
-            <p id="bandbio"> Bandbio</p>
+            <h2 id="pubName"> Couldnt Find Info about Pub</h2>
+            <p id="website"> Couldnt Find Info about Pub</p>
+            <p id="location"> </p>
+            <p id="tags"> </p>
 
           </div>
         </div>
 
       </div>
-
-      <div class="row swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" id="topalbum1"></div>
-          <div class="swiper-slide" id="topalbum2"> </div>
-          <div class="swiper-slide" id="topalbum3"></div>
-          <div class="swiper-slide" id="topalbum4"></div>
-          <div class="swiper-slide" id="topalbum5"></div>
-          <div class="swiper-slide" id="topalbum6"></div>
-          <div class="swiper-slide" id="topalbum7"></div>
-          <div class="swiper-slide" id="topalbum8"></div>
-          <div class="swiper-slide" id="topalbum9"></div>
-          <div class="swiper-slide" id="topalbum10"></div>
-        </div>
-        <!-- Add Arrows -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-      </div>
     </div>
+
   </section>
 
-
-  <section id="Tour" class="otherSections">
+  <section id="Shows" class="otherSections">
     <div class="invisible">
       <a href="https://www.songkick.com/">
         <img src="../img/powered-by-songkick-pink.png" alt="Powered by Songkick" style=" width: 10%"> <br>
@@ -166,67 +141,6 @@
       </table>
     </div>
   </section>
-
-  <section class="otherSections" id="Similiar">
-    <div class="invisible">
-    </div>
-    <a href="https://www.deezer.com/us/">
-      <img src="../img/DZ_Logo_CMYK_W.png" alt="Powered by Songkick" style=" width: 10%"> <br>
-    </a>
-
-    <div class="related">
-      <a href="" id="deezerLink1">
-        <div class="img-container" id="relatedPic1">
-          <div class=imgText id="relatedName1">
-          </div>
-        </div>
-      </a>
-      <a href="" id="deezerLink2">
-        <div class="img-container" id="relatedPic2">
-          <div class=imgText id="relatedName2">
-          </div>
-        </div>
-      </a>
-      <a href="" id="deezerLink3">
-        <div class="img-container" id="relatedPic3">
-          <div class=imgText id="relatedName3"> </div>
-        </div>
-      </a>
-      <a href="" id="deezerLink4">
-        <div class="img-container" id="relatedPic4">
-          <div class=imgText id="relatedName4"> </div>
-        </div>
-      </a>
-    </div>
-
-    <div class="related">
-      <a href="" id="deezerLink5">
-        <div class="img-container" id="relatedPic5">
-          <div class=imgText id="relatedName5">
-          </div>
-        </div>
-      </a>
-      <a href="" id="deezerLink6">
-        <div class="img-container" id="relatedPic6">
-          <div class=imgText id="relatedName6">
-          </div>
-        </div>
-      </a>
-      <a href="" id="deezerLink7">
-        <div class="img-container" id="relatedPic7">
-          <div class=imgText id="relatedName7"> </div>
-        </div>
-      </a>
-      <a href="" id="deezerLink8">
-        <div class="img-container" id="relatedPic8">
-          <div class=imgText id="relatedName8"> </div>
-        </div>
-      </a>
-    </div>
-    </div>
-
-  </section>
-
 
 
   <!-- Footer -->
@@ -249,7 +163,7 @@
 
     <!-- Javascript for lastFm API-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../js/search.js" type="text/javascript"></script>
+    <script src="../js/pub_profil.js" type="text/javascript"></script>
     <!-- for the album swiper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
 

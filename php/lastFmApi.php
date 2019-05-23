@@ -3,6 +3,8 @@
 $searchTerm = $_GET["searchterm"];
 $method = $_GET["method"];
 $id = $_GET["id"];
+$fourSquareClientID = "WQALJINN2LGXVNLGCIONIFFHOPGUEOLSP0RYCR1XQUANU0JC";
+$fourSquareClientSecret = "3W33YUADEHYJPAGZTOLAWPUDSUAHYGOMHZDK3FHEO1AKCJIV";
 
 
 if($method == 1){
@@ -55,8 +57,14 @@ if($method ==8){
 }
 
 if($method ==9){
-    $jsonurl = "http://api.songkick.com/api/3.0/venues/".$id."/calendar.json?apikey=RSDEntdIucTr1N21";
+    $jsonurl = "http://api.songkick.com/api/3.0/venues/".$id.".json?apikey=RSDEntdIucTr1N21";
     $jsontest = file_get_contents($jsonurl);
     echo $jsontest; 
 }
+if($method ==10){
+    $jsonurl = "http://api.foursquare.com/v2/venues/search?ll=".$id."&client_id=".$fourSquareClientID."&client_secret=".$fourSquareClientSecret."&v=20190522";
+    $jsontest = file_get_contents($jsonurl);
+    echo $jsontest; 
+}
+
 ?>

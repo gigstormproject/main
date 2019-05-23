@@ -1,20 +1,15 @@
-bandname = getCookie("band");
+
 window.onload = loadContent();
 
 function loadContent(){
-  getLastFMData();
-  getAlbumInfo();
-  getSongKickEvents();
-  getDeezerData();
-}
-
-function getSongKickEvents(){
+  bandname = getCookie("band");
   var urlBandId = "http://localhost:8081/php/lastFmApi.php?searchterm=" + bandname + "&method=3&id=0";
   fetch(urlBandId)
   .then(function(response){
     return response.json();
   })
   .then(function(data){
+    document.getElementById("loadingBar").style.width = "20%";
     let id = data.resultsPage.results.artist[0].id;
     return fetch('http://localhost:8081/php/lastFmApi.php?searchterm=undefined&method=4&id=' + id);
   })
@@ -22,23 +17,23 @@ function getSongKickEvents(){
     return response.json();
   })
   .then(function(data){
+    document.getElementById("loadingBar").style.width = "30%";
     var events = data.resultsPage.results.event;
     createEventTable(events);
   })
   .catch(function(error){
-    console.log("Request failed", error)
+    return;
   })
-}
-
-function getDeezerData(){
-  var bandInfo = "http://localhost:8081/php/lastFmApi.php?searchterm=" + bandname + "&method=5&id=0";
-  fetch(bandInfo)
+  .then(() => {
+    var bandInfo = "http://localhost:8081/php/lastFmApi.php?searchterm=" + bandname + "&method=5&id=0";
+    return fetch(bandInfo);
+  })
   .then(function(response){
     return response.json();
   })
   .then(function(data){
+    document.getElementById("loadingBar").style.width = "40%";
     let bandpic = data.data[0].picture_medium;
-    console.log(bandpic);
     let id = data.data[0].id;
     document.getElementById("bandpic").src = bandpic;
     return fetch('http://localhost:8081/php/lastFmApi.php?searchterm=undefined&method=6&id=' + id)
@@ -47,6 +42,7 @@ function getDeezerData(){
     return response.json();
   })
   .then(function(data){
+    document.getElementById("loadingBar").style.width = "50%";
     data.data.forEach(function(artist, i){
       url = "url(" + artist.picture_big + ")";
       relatedPic = "relatedPic" + (i+1);
@@ -59,11 +55,19 @@ function getDeezerData(){
       document.getElementById(deezerLink).setAttribute('href', deezerURL);
     })
   })
-}
-
-function getLastFMData(bandurl){
-  var bandurl = "http://localhost:8081/php/lastFmApi.php?searchterm=" + bandname + "&method=1&id=0";
-  $.getJSON(bandurl, function(data) {
+  .catch(function(error){
+    return;
+  })
+  .then(() => {
+    document.getElementById("loadingBar").style.width = "60%";
+    var bandurl = "http://localhost:8081/php/lastFmApi.php?searchterm=" + bandname + "&method=1&id=0";
+    return fetch(bandurl);
+  })
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(data){
+    document.getElementById("loadingBar").style.width = "70%";
     let name = data.artist.name;
     let bio = data.artist.bio.summary;
     //let tags = data.artist.tags.tag[0].name;
@@ -74,13 +78,21 @@ function getLastFMData(bandurl){
     //document.getElementById("tags").innerHTML = tags;
     document.getElementById("ontour").innerHTML = ontour ? "On Tour" : "Not On Tour";
     document.getElementById("ontour").style.backgroundColor = ontour ? "green" : "red";
+    document.getElementById("ontour").style.animation = "swing-in 1s linear both 1s";
     //let related1 = data.artist.similar.artist[0].name; related page stub
-  });
-}
-
-function getAlbumInfo(albumurl){
-  var albumurl = "http://localhost:8081/php/lastFmApi.php?searchterm=" + bandname + "&method=2&id=0";
-  $.getJSON(albumurl, function(data) {
+  })
+  .catch(function(error){
+    return;
+  })
+  .then(() => {
+    var albumurl = "http://localhost:8081/php/lastFmApi.php?searchterm=" + bandname + "&method=2&id=0";
+    return fetch(albumurl);
+  })
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(data){
+    document.getElementById("loadingBar").style.width = "90%";
     var imageURLs = data.topalbums.album.map(album =>{
       array =[];
       array.push(album.image[3]["#text"]);
@@ -93,9 +105,19 @@ function getAlbumInfo(albumurl){
       document.getElementById(album).style.backgroundImage = url;
       document.getElementById(album).style.backgroundSize = "100%";
     }
-  });   
+  })
+  .then(() =>{
+    document.getElementById("loadingContainer").style.animation = "disappear 1s ease-out both";
+    var invisibleStuff = document.getElementsByClassName("invisible");
+    Array.from(invisibleStuff).forEach((el) => {
+      el.className = "visible";
+      el.style.animation = "appear 1s ease-in both";
+    });
+  })
+  .catch(function(error){
+    console.log("Request failed", error)
+  })
 }
-
 function createEventTable(events){
   var eventsArray = events.map( event =>{
     var eventObject = {date: event.start.date, venue: event.venue.displayName, location: event.location.city}
@@ -171,6 +193,79 @@ $.getScript('https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.j
   });
 });
 
+// search bar function - stores Input in Web Storage
 
+function goSearchBand() {
+  
 
+  if (document.getElementById("bandInput").value != ""){
+    if (typeof Storage !== "undefined") {
+      localStorage.setItem("band", document.getElementById("bandInput").value);
+      window.location.href="../pages/band_search.html";
+    } else {
+      alert("Storage not activated");
+    }
     
+  }
+  else {
+    
+  }
+}
+
+function goSearchPub() {
+  if(document.getElementById("pubInput").value != ""){
+    if (typeof Storage !== "undefined") {
+      localStorage.setItem("pub", document.getElementById("pubInput").value);
+      window.location.href="../pages/pub_search.html";
+    } else {
+      alert("Storage not activated");
+    }
+  }
+    else {
+    
+    }
+}
+
+var inputBand = document.getElementById("bandInput");
+console.log(inputBand);
+inputBand.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("bandSearch").click();
+  }
+});
+
+
+var inputPub = document.getElementById("pubInput");
+inputPub.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("pubSearch").click();
+  }
+});
+
+(function() {
+  var isBootstrapEvent = false;
+  if (window.jQuery) {
+      var all = jQuery('*');
+      jQuery.each(['hide.bs.dropdown', 
+          'hide.bs.collapse', 
+          'hide.bs.modal', 
+          'hide.bs.tooltip',
+          'hide.bs.popover'], function(index, eventName) {
+          all.on(eventName, function( event ) {
+              isBootstrapEvent = true;
+          });
+      });
+  }
+  var originalHide = Element.hide;
+  Element.addMethods({
+      hide: function(element) {
+          if(isBootstrapEvent) {
+              isBootstrapEvent = false;
+              return element;
+          }
+          return originalHide(element);
+      }
+  });
+})();

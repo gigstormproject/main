@@ -617,3 +617,51 @@ form h2{
   background: none;
   width: 7vw;
 }
+
+.second_hide{
+  display:none;
+}
+
+@media(max-width:768px){
+div.light{
+  display: none !important;
+}
+.logo{
+  font-size:2.3em;
+  margin-left:5%;
+}
+.logoSmall{
+  font-size:2em;
+  padding-left:5%;
+}
+
+button.navbar-toggler {
+  margin-left: 5%;
+}
+
+.login-button{
+  display:none;
+}
+div#navbarResponsive {
+  margin-left: 8%;
+}
+
+.second_hide {
+  display: block;
+  width: 100px;
+  margin-left: 45%;
+}
+
+.s1_title{
+  padding-top:20vh;
+}
+
+.s2_title{
+  padding-top:10vh !important;
+}
+
+.title-s3{
+  padding-top:20vh !important;
+}
+
+}
