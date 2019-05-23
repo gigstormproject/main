@@ -22,23 +22,33 @@ span.onclick = function() {
 
 function goSearchBand() {
   
-  if (typeof Storage !== "undefined") {
-    localStorage.setItem("band", document.getElementById("bandInput").value);
-    window.location.href="../pages/band_search.html";
-  } else {
-    alert("Storage not activated");
+
+  if (document.getElementById("bandInput").value != ""){
+    if (typeof Storage !== "undefined") {
+      localStorage.setItem("band", document.getElementById("bandInput").value);
+      window.location.href="../pages/band_search.html";
+    } else {
+      alert("Storage not activated");
+    }
+    
   }
-  
+  else {
+    
+  }
 }
 
 function goSearchPub() {
-  if (typeof Storage !== "undefined") {
-    localStorage.setItem("pub", document.getElementById("pubInput").value);
-    window.location.href="../pages/pub_search.html";
-  } else {
-    alert("Storage not activated");
+  if(document.getElementById("pubInput").value != ""){
+    if (typeof Storage !== "undefined") {
+      localStorage.setItem("pub", document.getElementById("pubInput").value);
+      window.location.href="../pages/pub_search.html";
+    } else {
+      alert("Storage not activated");
+    }
   }
-  
+    else {
+    
+    }
 }
 
 var inputBand = document.getElementById("bandInput");
